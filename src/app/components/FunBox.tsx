@@ -1,7 +1,7 @@
 "use client";
 import { Engine, Render, World, Bodies, Vector, Body } from "matter-js";
 import { Fragment, useEffect, useRef } from "react";
-import { RefreshCcw, Trash } from "react-feather";
+import { RefreshCcw } from "react-feather";
 
 const FunBox = () => {
   const scene = useRef(null);
@@ -45,7 +45,7 @@ const FunBox = () => {
     Engine.run(engine.current);
     Render.run(render);
 
-    addInitialBodies(5);
+    addInitialBodies(10);
     applyForce(
       {
         // apply force at random x value between 0 and 100
@@ -208,7 +208,7 @@ const FunBox = () => {
       />
       <RefreshCcw
         onClick={clearBodies}
-        className="ease absolute right-5 top-[18px] cursor-pointer text-white transition-all duration-500 hover:text-red-500"
+        className="ease absolute right-5 top-[18px] cursor-pointer text-white transition-all duration-500 hover:text-blue-500 hover:rotate-180"
         size={20}
       />
     </Fragment>
