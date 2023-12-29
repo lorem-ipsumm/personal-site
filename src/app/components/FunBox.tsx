@@ -9,7 +9,7 @@ const FunBox = () => {
   const bodies = useRef<Body[]>([]);
 
   // low vertical gravity
-  engine.current.world.gravity.y = 0.00;
+  engine.current.world.gravity.y = 0.0;
 
   useEffect(() => {
     if (!scene.current) return;
@@ -45,15 +45,15 @@ const FunBox = () => {
     Engine.run(engine.current);
     Render.run(render);
 
-    addInitialBodies();
+    addInitialBodies(5);
     applyForce(
       {
         // apply force at random x value between 0 and 100
         x: Math.random() * 5,
         y: 0,
       },
-      // apply a random force value between 0 and 0.01
-      Math.random() * 0.01,
+      // apply a random force value between 0.1 and 0.5
+      0.1 + Math.random() * 0.4,
     );
 
     // unmount
@@ -70,8 +70,8 @@ const FunBox = () => {
     };
   }, []);
 
-  const addInitialBodies = () => {
-    for (let i = 0; i < 5; i++) {
+  const addInitialBodies = (count: number) => {
+    for (let i = 0; i < count; i++) {
       // generate a random color
       const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
       const params = {
@@ -104,12 +104,16 @@ const FunBox = () => {
     });
     bodies.current = [];
 
-    addInitialBodies();
-    applyForce({
-      // apply force at random x value between 0 and 100
-      x: Math.random() * 5,
-      y: 0,
-    });
+    addInitialBodies(10);
+    applyForce(
+      {
+        // apply force at random x value between 0 and 100
+        x: Math.random() * 5,
+        y: 0,
+      },
+      // apply a random force value between 0.1 and 0.5
+      0.3 + Math.random() * 0.5,
+    );
   };
 
   const addCircle = (params: any) => {
@@ -173,12 +177,12 @@ const FunBox = () => {
       x: e.nativeEvent.offsetX,
       y: e.nativeEvent.offsetY,
     };
-    applyForce(mousePosition);
+    applyForce(mousePosition, 0.05);
   };
 
   const applyForce = (
     position: { x: number; y: number },
-    forceValue: number = 0.01,
+    forceValue: number = 0.1,
   ) => {
     bodies.current.forEach((body) => {
       const distance = Vector.magnitude(Vector.sub(position, body.position));
