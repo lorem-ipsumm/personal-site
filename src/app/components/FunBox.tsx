@@ -1,7 +1,9 @@
 "use client";
+import { useAtom } from "jotai";
 import { Engine, Render, World, Bodies, Vector, Body } from "matter-js";
 import { Fragment, useEffect, useRef } from "react";
 import { RefreshCcw } from "react-feather";
+import { currentArticleAtom } from "../utils/atoms";
 
 const FunBox = () => {
   const scene = useRef(null);
@@ -10,6 +12,9 @@ const FunBox = () => {
 
   // low vertical gravity
   engine.current.world.gravity.y = 0.0;
+
+  // import atom
+  const [currentArticle] = useAtom(currentArticleAtom);
 
   useEffect(() => {
     if (!scene.current) return;
@@ -70,6 +75,22 @@ const FunBox = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!currentArticle || !scene.current) return;
+    // apply a force to a random point on the canvas
+    const canvas = scene.current as HTMLDivElement;
+    const cw = canvas.clientWidth as number;
+    const ch = canvas.clientHeight as number;
+    applyForce(
+      {
+        x: Math.random() * cw,
+        y: Math.random() * ch,
+      },
+      0.1,
+      200
+    )
+  }, [currentArticle]);
+
   const addInitialBodies = (count: number) => {
     for (let i = 0; i < count; i++) {
       // generate a random color
@@ -98,7 +119,7 @@ const FunBox = () => {
   };
 
   // remove all of the bodies from the world
-  const clearBodies = () => {
+  const resetBodies = () => {
     bodies.current.forEach((body) => {
       World.remove(engine.current.world, body);
     });
@@ -183,11 +204,11 @@ const FunBox = () => {
   const applyForce = (
     position: { x: number; y: number },
     forceValue: number = 0.1,
+    minDistance: number = 50,
   ) => {
     bodies.current.forEach((body) => {
       const distance = Vector.magnitude(Vector.sub(position, body.position));
-
-      if (distance < 50) {
+      if (distance < minDistance) {
         // adjust this value to control the "sensitivity" of the balls
         const force = Vector.mult(
           Vector.normalise(Vector.sub(body.position, position)),
@@ -207,7 +228,7 @@ const FunBox = () => {
         ref={scene}
       />
       <RefreshCcw
-        onClick={clearBodies}
+        onClick={resetBodies}
         className="ease absolute right-5 top-[18px] cursor-pointer text-white transition-all duration-500 hover:text-blue-500 hover:rotate-180"
         size={20}
       />

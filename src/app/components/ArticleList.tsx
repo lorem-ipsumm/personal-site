@@ -7,7 +7,7 @@ import { useAtom } from "jotai"
 const ArticleList = () => {
 
   // import atom
-  const [, setCurrentArticle] = useAtom(currentArticleAtom);
+  const [currentArticle, setCurrentArticle] = useAtom(currentArticleAtom);
 
   // render list item
   const listItem = (articleData: ArticleData) => {
@@ -19,9 +19,14 @@ const ArticleList = () => {
       year: "numeric"
     })
 
+    // styling for the current article list item
+    const currentArticleStyle = articleData.title === currentArticle?.title
+      ? "text-blue-500"
+      : "text-white";
+
     return (
       <li 
-        className="text-white hover:text-blue-500 cursor-pointer transition-all ease duration-500 flex flex-col"
+        className={`${currentArticleStyle} hover:text-blue-500 cursor-pointer transition-all ease duration-500 flex flex-col`}
         onClick={() => setCurrentArticle(articleData)}
       >
         <span>{articleData.title}</span>
