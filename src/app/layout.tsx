@@ -1,8 +1,7 @@
 import "~/styles/globals.css";
+import { Sora } from "next/font/google";
 
-import { Inter } from "next/font/google";
-
-const inter = Inter({
+const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -20,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans ${sora.variable}`}>{children}</body>
     </html>
   );
 }
