@@ -2,6 +2,7 @@ import { BarChart2, Bookmark, Cloud, Smile } from "react-feather";
 import ArticleList from "./ArticleList";
 import FunBox from "./FunBox";
 import GridItem from "./GridItem";
+import Orb from "../../assets/orb.png";
 
 const LeftSection = () => {
   return (
@@ -10,7 +11,12 @@ const LeftSection = () => {
     >
       <GridItem
         title="Lorem's Lab"
-        icon={<BarChart2/>}
+        icon={
+          <img
+            src={Orb.src}
+            className="w-[24px] h-[24px]"
+          />
+        }
       >
         <span>
           Welcome to my lab! Here you can find some of my projects, articles, and other fun stuff.

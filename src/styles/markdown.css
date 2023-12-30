@@ -42,18 +42,20 @@
 
 .markdown-content blockquote {
   color: #98c379;
-  border-left: 0.25em solid #d19a66;
+  border-left: 0.25em solid rgb(59, 130, 246);
+  padding-left: 10px;
 }
 
 .markdown-content pre {
+  position: relative;
   background-color: #282c34;
   color: #abb2bf;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .markdown-content code {
-  color: #d578dd;
-  background-color: #1d1c1d;
+  background-color: #1d1c1d !important;
 }
 
 .markdown-content pre>code {
@@ -65,6 +67,7 @@
   font-family: monospace;
   font-size: 15px;
   overflow-x: auto;
+  box-shadow: 0 0 10px 5px rgba(0,0,0, 0.4);
 }
 
 .markdown-content img {
@@ -92,4 +95,13 @@
 
 .markdown-content ul li {
   list-style-type: disc;
+}
+
+.markdown-content ol li {
+  list-style: decimal;
+}
+
+.markdown-content .linenumber {
+  min-width: 2.5em !important;
+  color: rgb(79, 75, 79) !important;
 }

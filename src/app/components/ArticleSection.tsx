@@ -4,6 +4,7 @@ import Img from "../../assets/img.png";
 import Article from "./Article";
 import { useAtom } from "jotai";
 import { currentArticleAtom } from "../utils/atoms";
+import TagsSection from "./TagsSection";
 
 const ArticleSection = () => {
 
@@ -18,7 +19,7 @@ const ArticleSection = () => {
       if (!sectionRef.current) return;
       const scroll = sectionRef.current.scrollTop;
       let style = scroll && scroll > 600 
-        ? "p-5 rounded-md shadow-md border-[1px] border-[#303030] bg-[#12131355]"
+        ? "p-5 rounded-md shadow-lg border-[1px] border-[#303030] bg-[#1d1c1d99]"
         : "bg-[#121313] border-[#121313] rounded-md";
       setHeaderStyle(style)
     };
@@ -51,12 +52,12 @@ const ArticleSection = () => {
     });
     
     return (
-      <div className={`sticky top-0 transition-all ease duration-500 backdrop-blur-md py-5 ${headerStyle}`}>
-        <h1 className="text-3xl font-bold">
+      <div className={`z-10 sticky top-0 transition-all ease duration-500 backdrop-blur-lg py-3 ${headerStyle}`}>
+        <h1 className="text-3xl font-bold mb-1">
           {currentArticle?.title}
         </h1>
         <span
-          className="text-blue-500"
+          className="text-blue-500 text-xl"
         >
           {formattedDate}
         </span>
@@ -80,10 +81,10 @@ const ArticleSection = () => {
       </div>
       {renderArticleHeader()}
       <div
-        className="overflow-x-hidden"
       >
         <Article/>
       </div>
+      <TagsSection/>
     </div>
   )
 }

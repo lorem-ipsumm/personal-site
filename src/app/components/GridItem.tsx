@@ -8,7 +8,7 @@ const GridItem = (props: {
   const renderTitle = () => {
     if (props.title) {
       return (
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center translate-y-[-1px]">
           {props.icon}
           <h2 className="text-lg font-semibold">
             {props.title}
