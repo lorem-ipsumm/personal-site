@@ -24,7 +24,9 @@
 
 .markdown-content p {
   color: #abb2bf;
-  margin: 10px 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.7em;
 }
 
 .markdown-content a {
@@ -63,7 +65,7 @@
   padding: 10px;
   display: block;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 20px 0;
   font-family: monospace;
   font-size: 15px;
   overflow-x: auto;
@@ -73,7 +75,7 @@
 .markdown-content img {
   margin: auto;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   box-shadow: 0 0 10px 5px rgba(0,0,0, 0.4);
   border-radius: 10px;
 }
@@ -85,12 +87,13 @@
 .markdown-content ul,
 .markdown-content ol {
   color: #abb2bf;
-  padding-left: 2em;
+  padding-left: 3em;
   margin: 10px 0;
 }
 
 .markdown-content li {
   margin-bottom: 0.5em;
+  font-size: 20px;
 }
 
 .markdown-content ul li {

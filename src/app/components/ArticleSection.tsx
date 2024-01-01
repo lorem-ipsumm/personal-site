@@ -71,12 +71,12 @@ const ArticleSection = () => {
       ref={sectionRef}
     >
       <div
-        className="w-full h-[500px] overflow-hidden rounded-md shadow-lg mb-4"
+        className="w-full h-[500px] overflow-hidden rounded-md shadow-lg mb-4 flex justify-center items-center"
       >
         <img 
           alt="Blog post" 
           className="w-full mb-4 rounded-md shadow-lg" 
-          src={Img.src} 
+          src={currentArticle?.imgPath || Img.src} 
         />
       </div>
       {renderArticleHeader()}
