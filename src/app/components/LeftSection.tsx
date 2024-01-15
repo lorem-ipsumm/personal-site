@@ -6,36 +6,24 @@ import Orb from "../../assets/orb.png";
 
 const LeftSection = () => {
   return (
-    <div 
-      className="flex flex-col h-100 w-1/4 gap-5 p-5 pr-0"
-    >
+    <div className="h-100 flex w-1/4 flex-col gap-5 p-5 pr-0">
       <GridItem
         title="Lorem's Lab"
-        icon={
-          <img
-            src={Orb.src}
-            className="w-[24px] h-[24px]"
-          />
-        }
+        icon={<img src={Orb.src} className="h-[24px] w-[24px]" />}
       >
         <span>
-          Welcome to my lab! Here you can find some of my projects, articles, and other fun stuff.
+          Welcome to my lab! Here you can find some of my projects, articles,
+          and other fun stuff.
         </span>
       </GridItem>
-      <GridItem
-        title="Articles" 
-        icon={<Bookmark/>}
-      >
-        <ArticleList/>
+      <GridItem title="Articles" icon={<Bookmark />}>
+        <ArticleList />
       </GridItem>
-      <GridItem
-        title="Ball Pit"
-        icon={<Smile/>}
-      >
-        <FunBox/> 
+      <GridItem title="Ball Pit" icon={<Smile />}>
+        <FunBox />
       </GridItem>
     </div>
-  )
-}
+  );
+};
 
 export default LeftSection;

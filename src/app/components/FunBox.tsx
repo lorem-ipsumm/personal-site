@@ -87,8 +87,8 @@ const FunBox = () => {
         y: Math.random() * ch,
       },
       0.1,
-      200
-    )
+      200,
+    );
   }, [currentArticle]);
 
   const addInitialBodies = (count: number) => {
@@ -229,7 +229,7 @@ const FunBox = () => {
       />
       <RefreshCcw
         onClick={resetBodies}
-        className="ease absolute right-5 top-[18px] cursor-pointer text-white transition-all duration-500 hover:text-blue-500 hover:rotate-180"
+        className="ease absolute right-5 top-[18px] cursor-pointer text-white transition-all duration-500 hover:rotate-180 hover:text-blue-500"
         size={20}
       />
     </Fragment>

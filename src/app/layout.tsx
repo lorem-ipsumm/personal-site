@@ -8,7 +8,8 @@ const sora = Sora({
 
 export const metadata = {
   title: "Lorem's Labs",
-  description: "Hello! I'm Lorem, and this is my lab. Here you can find some of my projects, articles, and other fun stuff.",
+  description:
+    "Hello! I'm Lorem, and this is my lab. Here you can find some of my projects, articles, and other fun stuff.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

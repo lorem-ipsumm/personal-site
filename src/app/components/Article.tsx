@@ -26,7 +26,7 @@ const Article = () => {
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-  }
+  };
 
   // syntax highlighting, code block styling, and line numbers
   const components = {
@@ -36,7 +36,7 @@ const Article = () => {
       return !inline && match ? (
         <Fragment>
           <Copy
-            className="absolute top-4 right-4 cursor-pointer hover:text-blue-500 transition-all ease duration-500 hover:scale-90"
+            className="ease absolute right-4 top-4 cursor-pointer transition-all duration-500 hover:scale-90 hover:text-blue-500"
             size={20}
             onClick={() => copyToClipboard(text)}
           />
