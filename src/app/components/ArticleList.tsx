@@ -54,7 +54,8 @@ const ArticleList = () => {
       .filter((articleData) =>
         articleData.title.toLowerCase().includes(searchInput.toLowerCase()),
       )
-      .slice(startIndex, endIndex);
+      .slice(startIndex, endIndex)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     if (filteredArticles.length === 0)
       return (
