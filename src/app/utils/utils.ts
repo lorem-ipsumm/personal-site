@@ -2,6 +2,14 @@ import { ArticleData } from "./interface";
 
 export const articles: ArticleData[] = [
   {
+    title: "Building Price Prophet",
+    description: "A story on how I built Price Prophet, a crypto price prediction tool",
+    filePath: "/articles/building-price-prophet.md",
+    imgPath: "/article-images/building-price-prophet.png",
+    tags: ["crypto", "price prediction"],
+    date: "2023-03-27",
+  },
+  {
     title: "Welcome to my Lab",
     description: "A brief introduction to my lab",
     filePath: "/articles/welcome.md",

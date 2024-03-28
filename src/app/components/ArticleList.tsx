@@ -64,7 +64,7 @@ const ArticleList = () => {
       );
     else
       return (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 min-h-[196px]">
           {filteredArticles.map((articleData, index) =>
             listItem(articleData, index),
           )}
