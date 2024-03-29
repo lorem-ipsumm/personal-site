@@ -50,7 +50,7 @@ const Article = () => {
             />
           ) : (
             <Check
-              className="ease absolute right-4 top-4 cursor-pointer transition-all duration-500 stroke-green-500 animation-pulse"
+              className="ease animation-pulse absolute right-4 top-4 cursor-pointer stroke-green-500 transition-all duration-500"
               size={20}
             />
           )}

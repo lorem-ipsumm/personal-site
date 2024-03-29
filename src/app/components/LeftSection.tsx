@@ -6,9 +6,9 @@ import Orb from "../../assets/orb.png";
 
 const LeftSection = () => {
   return (
-    <div className="h-100 flex w-1/4 flex-col gap-5 p-5 pr-0">
+    <div className="h-100 flex w-full flex-col gap-5 p-5 lg:w-1/4 lg:pr-0">
       <GridItem
-        title="Lorem's Lab"
+        title="Lorem Labs"
         icon={<img src={Orb.src} className="h-[24px] w-[24px]" />}
       >
         <span>
@@ -19,9 +19,11 @@ const LeftSection = () => {
       <GridItem title="Articles" icon={<Bookmark />}>
         <ArticleList />
       </GridItem>
-      <GridItem title="Ball Pit" icon={<Smile />}>
-        <FunBox />
-      </GridItem>
+      <div className="hidden lg:block">
+        <GridItem title="Ball Pit" icon={<Smile />}>
+          <FunBox />
+        </GridItem>
+      </div>
     </div>
   );
 };

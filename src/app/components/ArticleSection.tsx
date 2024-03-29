@@ -61,8 +61,11 @@ const ArticleSection = () => {
   };
 
   return (
-    <div className="max-h-screen w-3/4 overflow-y-auto p-5" ref={sectionRef}>
-      <div className="mb-4 flex h-[500px] w-full items-center justify-center overflow-hidden rounded-md shadow-lg">
+    <div
+      className="w-full overflow-y-auto p-5 lg:max-h-screen lg:w-3/4"
+      ref={sectionRef}
+    >
+      <div className="mb-4 flex w-full items-center justify-center overflow-hidden rounded-md shadow-lg lg:h-[500px]">
         <img
           alt="Blog post"
           className="mb-4 w-full rounded-md shadow-lg"

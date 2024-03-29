@@ -5,6 +5,7 @@ import { ArticleData } from "../utils/interface";
 import { articles } from "../utils/utils";
 import { useAtom } from "jotai";
 import { ChevronLeft, ChevronRight, Search } from "react-feather";
+import Link from "next/link";
 
 const ArticleList = () => {
   // import atom
@@ -31,15 +32,17 @@ const ArticleList = () => {
         ? "text-blue-500"
         : "text-white";
 
+    const slug = articleData.filePath.replace(".md", "");
+
     return (
-      <li
+      <Link
+        href={`${slug}`}
         className={`${currentArticleStyle} ease flex cursor-pointer flex-col transition-all duration-500 hover:text-blue-500`}
-        onClick={() => setCurrentArticle(articleData)}
         key={index}
       >
         <span>{articleData.title}</span>
         <span className="text-xs">{formattedDate}</span>
-      </li>
+      </Link>
     );
   };
 
@@ -65,7 +68,7 @@ const ArticleList = () => {
       );
     else
       return (
-        <div className="flex flex-col gap-3 min-h-[196px]">
+        <div className="flex min-h-[196px] flex-col gap-3">
           {filteredArticles.map((articleData, index) =>
             listItem(articleData, index),
           )}
