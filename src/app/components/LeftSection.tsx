@@ -8,7 +8,7 @@ const LeftSection = () => {
   return (
     <div className="h-100 flex w-full lg:w-1/4 flex-col gap-5 p-5 lg:pr-0">
       <GridItem
-        title="Lorem's Lab"
+        title="Lorem Labs"
         icon={<img src={Orb.src} className="h-[24px] w-[24px]" />}
       >
         <span>
