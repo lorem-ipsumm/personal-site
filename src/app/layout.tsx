@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
 import { Sora } from "next/font/google";
+import LeftSection from "./components/LeftSection";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -20,7 +21,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${sora.variable}`}>{children}</body>
+      <body
+        className={`flex bg-[#121313] font-sans text-white ${sora.variable}`}
+      >
+        <div className="m-auto flex md:flex-row flex-col md:min-h-screen w-full md:w-5/6 justify-center">
+          <LeftSection />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

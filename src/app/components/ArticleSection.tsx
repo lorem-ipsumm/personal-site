@@ -62,7 +62,7 @@ const ArticleSection = () => {
 
   return (
     <div
-      className="w-full overflow-y-auto p-5 lg:max-h-screen lg:w-3/4"
+      className="w-full overflow-y-scroll p-5 lg:max-h-screen lg:w-3/4"
       ref={sectionRef}
     >
       <div className="mb-4 flex w-full items-center justify-center overflow-hidden rounded-md shadow-lg lg:h-[500px]">
