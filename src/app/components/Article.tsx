@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import "../../styles/markdown.css";
 import { useAtom } from "jotai";
@@ -7,6 +7,8 @@ import { currentArticleAtom } from "../utils/atoms";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Check, Copy } from "react-feather";
+import { usePathname } from "next/navigation";
+import { ArticleData } from "../utils/interface";
 
 const Article = () => {
   // import atom
@@ -14,9 +16,14 @@ const Article = () => {
   // text content
   const [content, setContent] = useState<string>("");
   const [showCheck, setShowCheck] = useState<number>(-1);
+  const prevArticleRef = useRef<ArticleData | null>(null);
 
   useEffect(() => {
-    if (!currentArticle) return;
+    if (
+      !currentArticle ||
+      currentArticle.filePath === prevArticleRef.current?.filePath
+    ) return;
+    prevArticleRef.current = currentArticle;
     // fetch the article
     fetch(currentArticle?.filePath)
       .then((res) => res.text())

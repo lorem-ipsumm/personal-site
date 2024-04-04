@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const ArticleList = () => {
   // import atom
-  const [currentArticle, setCurrentArticle] = useAtom(currentArticleAtom);
+  const [currentArticle,] = useAtom(currentArticleAtom);
   const [searchInput, setSearchInput] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const articlesPerPage = 4;

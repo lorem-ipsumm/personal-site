@@ -5,11 +5,13 @@ import Article from "./Article";
 import { useAtom } from "jotai";
 import { currentArticleAtom } from "../utils/atoms";
 import TagsSection from "./TagsSection";
+import { Skeleton } from "~/components/ui/skeleton";
 
 const ArticleSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [headerStyle, setHeaderStyle] = useState<string>("");
   const [currentArticle] = useAtom(currentArticleAtom);
+  const [showSkeletons, setShowSkeletons] = useState<boolean>(true);
 
   useEffect(() => {
     // modify the header style based on scroll position
@@ -36,7 +38,15 @@ const ArticleSection = () => {
     // scroll to the top of the page whenever the article changes
     if (!sectionRef.current) return;
     sectionRef.current.scrollTop = 0;
+    toggleSkeletons();
   }, [currentArticle]);
+
+  const toggleSkeletons = () => {
+    setShowSkeletons(true);
+    setTimeout(() => {
+      setShowSkeletons(false);
+    }, 500);
+  };
 
   // render the article header
   const renderArticleHeader = () => {
@@ -50,14 +60,47 @@ const ArticleSection = () => {
       day: "numeric",
     });
 
+    const title = !showSkeletons ? (
+      currentArticle?.title
+    ) : (
+      <Skeleton className="fadeIn h-10 w-1/2 bg-zinc-800" />
+    );
+
+    const date = !showSkeletons ? (
+      formattedDate
+    ) : (
+      <Skeleton className="fadeIn mt-3 h-6 w-1/4 bg-zinc-800" />
+    );
+
     return (
       <div
         className={`ease sticky top-0 z-10 py-3 backdrop-blur-lg transition-all duration-500 ${headerStyle}`}
       >
-        <h1 className="mb-1 text-3xl font-bold">{currentArticle?.title}</h1>
-        <span className="text-xl text-blue-500">{formattedDate}</span>
+        <h1 className="mb-1 text-3xl font-bold">{title}</h1>
+        <span className="text-xl text-blue-500">{date}</span>
       </div>
     );
+  };
+
+  const renderArticleSkeleton = () => {
+    return (
+      <div>
+        <Skeleton className="fadeIn mt-3 h-60 w-full bg-zinc-800" />
+      </div>
+    );
+  };
+
+  const renderArticleImage = () => {
+    if (!currentArticle)
+      return <div className="article-image-skeleton h-full w-full" />;
+    else
+      return (
+        <img
+          alt="Blog post"
+          className="mb-4 w-full rounded-md shadow-lg"
+          src={currentArticle?.imgPath || Img.src}
+        />
+      );
   };
 
   return (
@@ -66,15 +109,11 @@ const ArticleSection = () => {
       ref={sectionRef}
     >
       <div className="mb-4 flex w-full items-center justify-center overflow-hidden rounded-md shadow-lg lg:h-[500px]">
-        <img
-          alt="Blog post"
-          className="mb-4 w-full rounded-md shadow-lg"
-          src={currentArticle?.imgPath || Img.src}
-        />
+        {renderArticleImage()}
       </div>
       {renderArticleHeader()}
-      <div>
-        <Article />
+      <div className="min-h-10">
+        {!showSkeletons ? <Article /> : renderArticleSkeleton()}
       </div>
       <TagsSection />
     </div>

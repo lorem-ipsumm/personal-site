@@ -91,13 +91,26 @@ const FunBox = () => {
     );
   }, [currentArticle]);
 
-  const addInitialBodies = (count: number) => {
+  const addInitialBodies = (
+    count: number
+  ) => {
+    // get the canvas
+    let x = 9;
+    let y = 1;
+    if (scene.current) {
+      const canvas = scene.current as HTMLDivElement;
+      const cw = canvas.clientWidth;
+      const ch = canvas.clientHeight;
+      // set the x and y values to be random points on the canvas
+      x = Math.random() * cw;
+      y = Math.random() * ch;
+    }
     for (let i = 0; i < count; i++) {
       // generate a random color
       const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
       const params = {
-        x: 9,
-        y: 1,
+        x: x,
+        y: y,
         radius: 10 + Math.random() * 20,
         options: {
           mass: 10,
@@ -120,7 +133,7 @@ const FunBox = () => {
 
   // remove all of the bodies from the world
   const resetBodies = () => {
-    bodies.current.forEach((body) => {
+    bodies.current.forEach((body, index) => {
       World.remove(engine.current.world, body);
     });
     bodies.current = [];
@@ -133,7 +146,7 @@ const FunBox = () => {
         y: 0,
       },
       // apply a random force value between 0.1 and 0.5
-      0.3 + Math.random() * 0.5,
+      100,
     );
   };
 

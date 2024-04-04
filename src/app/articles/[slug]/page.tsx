@@ -7,19 +7,22 @@ import { articles } from "~/app/utils/utils";
 
 const Article = ({ params }: { params: { slug: string } }) => {
 
-  const [, setCurrentArticle] = useAtom(currentArticleAtom);
+  const [currentArticle, setCurrentArticle] = useAtom(currentArticleAtom);
   
   useEffect(() => {
+    console.log(params.slug)
     // find the article with the matching slug
     const article = articles.find((article) => article.filePath.indexOf(params.slug) > -1);
     // if an article is found set it as the current article
-    if (article) {
+    if (article && article.filePath !== currentArticle?.filePath) {
       setCurrentArticle(article);
     }
   }, [params.slug]);
 
   return (
-    <ArticleSection />
+    <ArticleSection
+      key={params.slug}
+    />
   );
 };
 
