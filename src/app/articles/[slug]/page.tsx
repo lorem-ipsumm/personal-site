@@ -10,7 +10,6 @@ const Article = ({ params }: { params: { slug: string } }) => {
   const [currentArticle, setCurrentArticle] = useAtom(currentArticleAtom);
   
   useEffect(() => {
-    console.log(params.slug)
     // find the article with the matching slug
     const article = articles.find((article) => article.filePath.indexOf(params.slug) > -1);
     // if an article is found set it as the current article

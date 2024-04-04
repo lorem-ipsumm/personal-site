@@ -20,9 +20,7 @@ const LeftSection = () => {
         <ArticleList />
       </GridItem>
       <div className="hidden md:block">
-        <GridItem title="Ball Pit" icon={<Smile />}>
-          <FunBox />
-        </GridItem>
+        <FunBox />
       </div>
     </div>
   );
