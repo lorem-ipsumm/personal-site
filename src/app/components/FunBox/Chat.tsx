@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Send } from "react-feather";
 import { PuffLoader } from "react-spinners";
-import { set } from "zod";
+import { Skeleton } from "~/components/ui/skeleton";
 
 interface MESSAGE {
   likes: number;
@@ -19,6 +19,8 @@ const Chat = () => {
   const [pending, setPending] = useState<boolean>(false);
   const [username, setUsername] = useState<string | undefined>(undefined);
   const [uid, setUid] = useState<string | undefined>(undefined);
+  const [messagesLoaded, setMessagesLoaded] = useState<boolean>(false);
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ const Chat = () => {
     if (containerRef.current) {
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
     }
-  }
+  };
 
   const generateUid = () => {
     // check local storage for uid
@@ -43,7 +45,7 @@ const Chat = () => {
     setUid(uid);
     loadRoomData(uid);
     loadMessages();
-  }
+  };
 
   // send message to database
   const sendMessage = () => {
@@ -107,19 +109,18 @@ const Chat = () => {
         .then(function (response) {
           // update state var
           setMessages(response.data.messages);
+          setMessagesLoaded(true);
           scrollToBottom();
         })
         .catch(function (error) {
           console.log(error);
-
-      })
+        });
     } catch (e) {
       console.log(e);
     }
   };
 
   const loadRoomData = (uid: string) => {
-
     const url = `https://us-central1-qr-code-app-19379.cloudfunctions.net/loadRoomData`;
 
     const signupData = {
@@ -144,7 +145,6 @@ const Chat = () => {
   };
 
   const renderMessage = (message: MESSAGE, index: number) => {
-
     // format the date to be more readable
     const formattedDate = new Date(message.timestamp).toLocaleDateString(
       "en-US",
@@ -158,21 +158,32 @@ const Chat = () => {
     );
 
     return (
-      <div 
-        className="max-w-full text-wrap flex flex-col"
-        key={index}
-      >
+      <div className="flex max-w-full flex-col text-wrap" key={index}>
         <span className="font-bold text-blue-500">{message.username}</span>
-        <span className="text-xs opacity-40 mb-1">{formattedDate}</span>
+        <span className="mb-1 text-xs opacity-40">{formattedDate}</span>
         <span>{message.message}</span>
+      </div>
+    );
+  };
+
+  const renderMessageSkeletons = () => {
+    return (
+      <div className="flex flex-col gap-3 overflow-hidden pb-3">
+        {Array.from({ length: 10 }).map((_, index) => (
+          <div className="flex max-w-full flex-col gap-2 text-wrap" key={index}>
+            <Skeleton className="h-4 w-1/2 bg-zinc-800" />
+            <Skeleton className="h-3 w-1/4 bg-zinc-800" />
+            <Skeleton className="h-10 w-full bg-zinc-800" />
+          </div>
+        ))}
       </div>
     );
   };
 
   const renderMesssages = () => {
     return (
-      <div 
-        className="flex flex-col gap-3 overflow-y-auto pb-3 overflow-x-hidden"
+      <div
+        className="flex flex-col gap-3 overflow-y-auto overflow-x-hidden pb-3"
         ref={containerRef}
       >
         {messages.map((message: MESSAGE, index: number) =>
@@ -182,14 +193,12 @@ const Chat = () => {
     );
   };
 
-  const keyPressed = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-  ) => {
+  const keyPressed = (e: React.KeyboardEvent<HTMLInputElement>) => {
     // if the user presses enter, send the message
     if (e.key === "Enter") {
       sendMessage();
     }
-  }
+  };
 
   const renderInput = () => {
     return (
@@ -218,7 +227,7 @@ const Chat = () => {
 
   return (
     <div className="flex h-full w-full flex-col justify-between gap-1">
-      {renderMesssages()}
+      {messagesLoaded ? renderMesssages() : renderMessageSkeletons()}
       {renderInput()}
     </div>
   );

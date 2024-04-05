@@ -4,7 +4,7 @@ import BallPit from "./FunBox/BallPit";
 import Chat from "./FunBox/Chat";
 import GridItem from "./GridItem";
 import { Smile } from "react-feather";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
 const FunBox = () => {
   const activities = [
@@ -24,9 +24,12 @@ const FunBox = () => {
 
   const renderButtons = () => {
     return (
-      <Tabs className="dark w-full -translate-y-[12px]" defaultValue={currentActivity.title}>
-        <TabsList 
-          className="dark w-full bg-transparent gap-2 p-0"
+      <Tabs
+        className="dark w-full -translate-y-[12px]"
+        defaultValue={currentActivity.title}
+      >
+        <TabsList
+          className="dark w-full gap-2 border border-[#303030] bg-transparent"
           defaultValue={currentActivity.title}
         >
           {activities.map((activity, index) => (
@@ -34,7 +37,7 @@ const FunBox = () => {
               key={index}
               value={activity.title}
               onClick={() => setCurrentActivity(activity)}
-              className="dark w-1/2 h-10 hover:bg-zinc-900 transition-all"
+              className="h-8/10 dark w-1/2 transition-all hover:bg-zinc-900"
             >
               {activity.title}
             </TabsTrigger>
