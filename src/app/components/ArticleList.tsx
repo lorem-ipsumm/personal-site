@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const ArticleList = () => {
   // import atom
-  const [currentArticle,] = useAtom(currentArticleAtom);
+  const [currentArticle] = useAtom(currentArticleAtom);
   const [searchInput, setSearchInput] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const articlesPerPage = 4;
@@ -54,11 +54,11 @@ const ArticleList = () => {
 
     // filter and paginate the articles
     const filteredArticles = articles
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .filter((articleData) =>
         articleData.title.toLowerCase().includes(searchInput.toLowerCase()),
       )
-      .slice(startIndex, endIndex)
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      .slice(startIndex, endIndex);
 
     if (filteredArticles.length === 0)
       return (

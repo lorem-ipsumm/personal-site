@@ -7,15 +7,23 @@ export const articles: ArticleData[] = [
     filePath: "/articles/welcome.md",
     imgPath: "/article-images/welcome.png",
     tags: ["welcome"],
-    date: "2022-01-01",
+    date: "2021-01-01",
   },
+  // {
+  //   title: "Building a Desktop AI Assistant",
+  //   description: "A story on how I built a desktop AI assistant with Electron + React + Typescript",
+  //   filePath: "/articles/desktop-ai-assistant.md",
+  //   imgPath: "/article-images/desktop-ai-assistant.webp",
+  //   tags: ["electron", "ai", "desktop"],
+  //   date: "2024-04-06",
+  // },
   {
     title: "Building Price Prophet",
     description: "A story on how I built Price Prophet, a crypto price prediction tool",
     filePath: "/articles/building-price-prophet.md",
     imgPath: "/article-images/building-price-prophet.png",
     tags: ["crypto", "price prediction"],
-    date: "2023-03-27",
+    date: "2024-03-27",
   },
   {
     title: "Atomic NFT Arbitrages",
@@ -23,7 +31,7 @@ export const articles: ArticleData[] = [
     filePath: "/articles/nft-arbitrages.md",
     imgPath: "/article-images/nft-arbitrages.png",
     tags: ["ethereum", "flashloan", "mev", "solidity"],
-    date: "2022-03-01",
+    date: "2023-03-01",
   },
   {
     title: "Creating Crypto Price Alerts",
@@ -39,6 +47,6 @@ export const articles: ArticleData[] = [
     filePath: "/articles/eth-web-dev-basics.md",
     imgPath: "/article-images/eth-web-dev-basics.png",
     tags: ["ethereum", "web dev", "solidity"],
-    date: "2023-05-05",
+    date: "2023-01-05",
   }
 ]

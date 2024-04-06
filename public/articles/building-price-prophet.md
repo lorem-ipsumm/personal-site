@@ -2,6 +2,8 @@ Price prophet is a site that allows traders to practice their technical analysis
 
 This is the first real product that I plan on getting to market and while I've taken several breaks on this, I want to document the rest of the process. As of now I'm very close to being able to release the first version, but there are still a few features and bugs that I would like to add before launching. 
 
+![demo](https://s9.gifyu.com/images/SVOeO.gif)
+
 # Tech Stack
 - **NextJS + Typescript**:  Frontend/Backend framework
 - **Supabase**: Easy to setup + integrate DB
