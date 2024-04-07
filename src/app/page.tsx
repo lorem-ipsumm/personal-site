@@ -10,8 +10,15 @@ export default function HomePage() {
 
   const [, setCurrentArticle] = useAtom(currentArticleAtom);
 
+  // set the current article to the first article in the list
+  // when the page loads
   useEffect(() => {
-    setCurrentArticle(articles[0] as ArticleData);
+    const welcomeArticle = articles.find(article => article.title === "Welcome to my Lab");
+    if (welcomeArticle) {
+      setCurrentArticle(welcomeArticle as ArticleData);
+    } else {
+      setCurrentArticle(articles[0] as ArticleData);
+    }
   }, []);
 
   return (

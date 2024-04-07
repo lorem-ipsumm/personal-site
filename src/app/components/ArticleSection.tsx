@@ -37,7 +37,6 @@ const ArticleSection = () => {
   useEffect(() => {
     // scroll to the top of the page whenever the article changes
     if (!sectionRef.current) return;
-    sectionRef.current.scrollTop = 0;
     toggleSkeletons();
   }, [currentArticle]);
 

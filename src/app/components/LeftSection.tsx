@@ -3,12 +3,13 @@ import ArticleList from "./ArticleList";
 import FunBox from "./FunBox";
 import GridItem from "./GridItem";
 import Orb from "../../assets/orb.png";
+import Link from "next/link";
 
 const LeftSection = () => {
   return (
-    <div className="h-100 flex w-full lg:w-1/4 flex-col gap-5 p-5 lg:pr-0">
+    <div className="h-100 flex w-full flex-col gap-5 p-5 lg:w-1/4 lg:pr-0">
       <GridItem
-        title="Lorem Labs"
+        title={<Link href="/articles/welcome">Lorem Labs</Link>}
         icon={<img src={Orb.src} className="h-[24px] w-[24px]" />}
       >
         <span>

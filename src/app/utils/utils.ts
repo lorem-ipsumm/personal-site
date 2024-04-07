@@ -7,7 +7,7 @@ export const articles: ArticleData[] = [
     filePath: "/articles/welcome.md",
     imgPath: "/article-images/welcome.png",
     tags: ["welcome"],
-    date: "2021-01-01",
+    date: "2023-12-31",
   },
   // {
   //   title: "Building a Desktop AI Assistant",
@@ -31,7 +31,7 @@ export const articles: ArticleData[] = [
     filePath: "/articles/nft-arbitrages.md",
     imgPath: "/article-images/nft-arbitrages.png",
     tags: ["ethereum", "flashloan", "mev", "solidity"],
-    date: "2023-03-01",
+    date: "2024-03-01",
   },
   {
     title: "Creating Crypto Price Alerts",
@@ -39,7 +39,7 @@ export const articles: ArticleData[] = [
     filePath: "/articles/price-alerts-bot.md",
     imgPath: "/article-images/price-alerts-bot.png",
     tags: ["typescript", "crypto", "price alerts"],
-    date: "2023-03-15",
+    date: "2024-03-15",
   },
   {
     title: "ETH Web Dev Basics",
@@ -47,6 +47,6 @@ export const articles: ArticleData[] = [
     filePath: "/articles/eth-web-dev-basics.md",
     imgPath: "/article-images/eth-web-dev-basics.png",
     tags: ["ethereum", "web dev", "solidity"],
-    date: "2023-01-05",
+    date: "2024-01-05",
   }
 ]

@@ -1,4 +1,4 @@
-const GridItem = (props: { title: string; icon: any; children: any }) => {
+const GridItem = (props: { title: any; icon: any; children: any }) => {
   const renderTitle = () => {
     if (props.title) {
       return (
