@@ -15,7 +15,7 @@ export const articles: ArticleData[] = [
     filePath: "/articles/desktop-ai-assistant.md",
     imgPath: "/article-images/desktop-ai-assistant.webp",
     tags: ["electron", "ai", "desktop"],
-    date: "2024-04-06",
+    date: "2024-04-24",
   },
   {
     title: "Building Price Prophet",
