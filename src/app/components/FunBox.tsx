@@ -26,11 +26,9 @@ const FunBox = () => {
     return (
       <Tabs
         className="dark w-full -translate-y-[12px]"
-        defaultValue={currentActivity.title}
       >
         <TabsList
           className="dark w-full gap-2 border border-[#303030] bg-transparent"
-          defaultValue={currentActivity.title}
         >
           {activities.map((activity, index) => (
             <TabsTrigger

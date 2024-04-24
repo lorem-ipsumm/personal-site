@@ -9,14 +9,14 @@ export const articles: ArticleData[] = [
     tags: ["welcome"],
     date: "2023-12-31",
   },
-  // {
-  //   title: "Building a Desktop AI Assistant",
-  //   description: "A story on how I built a desktop AI assistant with Electron + React + Typescript",
-  //   filePath: "/articles/desktop-ai-assistant.md",
-  //   imgPath: "/article-images/desktop-ai-assistant.webp",
-  //   tags: ["electron", "ai", "desktop"],
-  //   date: "2024-04-06",
-  // },
+  {
+    title: "Building a Desktop AI Assistant",
+    description: "A story on how I built a desktop AI assistant with Electron + React + Typescript",
+    filePath: "/articles/desktop-ai-assistant.md",
+    imgPath: "/article-images/desktop-ai-assistant.webp",
+    tags: ["electron", "ai", "desktop"],
+    date: "2024-04-06",
+  },
   {
     title: "Building Price Prophet",
     description: "A story on how I built Price Prophet, a crypto price prediction tool",
