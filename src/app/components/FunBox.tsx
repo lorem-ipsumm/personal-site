@@ -26,6 +26,7 @@ const FunBox = () => {
     return (
       <Tabs
         className="dark w-full -translate-y-[12px]"
+        defaultValue="Ball Pit"
       >
         <TabsList
           className="dark w-full gap-2 border border-[#303030] bg-transparent"
