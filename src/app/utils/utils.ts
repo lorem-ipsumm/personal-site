@@ -10,6 +10,14 @@ export const articles: ArticleData[] = [
     date: "2023-12-31",
   },
   {
+    title: "My Portfolio",
+    description: "",
+    filePath: "/articles/portfolio.md",
+    imgPath: "/article-images/portfolio.webp",
+    tags: ["programming", "portfolio", "projects"],
+    date: "2023-12-30",
+  },
+  {
     title: "Building a Desktop AI Assistant",
     description: "A story on how I built a desktop AI assistant with Electron + React + Typescript",
     filePath: "/articles/desktop-ai-assistant.md",

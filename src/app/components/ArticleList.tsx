@@ -93,6 +93,15 @@ const ArticleList = () => {
     );
   };
 
+  const chevronStyle = (type: "left" | "right") => {
+    const numArticles = articles.length;
+    const numPages = Math.ceil(numArticles / articlesPerPage);
+    if (type === "left")
+      return currentPage === 1 ? "text-gray-500" : "";
+    else if (type === "right")
+      return currentPage === numPages ? "text-gray-500" : "";
+  };
+
   const renderPagination = () => {
     // styling for the pagination buttons
     const buttonStyle =
@@ -107,6 +116,7 @@ const ArticleList = () => {
         <div className={buttonStyle}>
           <ChevronLeft
             size={20}
+            className={chevronStyle("left")}
             onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
           />
         </div>
@@ -114,6 +124,7 @@ const ArticleList = () => {
         <div className={buttonStyle}>
           <ChevronRight
             size={20}
+            className={chevronStyle("right")}
             onClick={() =>
               currentPage < numPages && setCurrentPage(currentPage + 1)
             }

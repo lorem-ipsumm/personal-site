@@ -6,6 +6,17 @@ import Orb from "../../assets/orb.png";
 import Link from "next/link";
 
 const LeftSection = () => {
+  const portfolioLink = () => {
+    return (
+      <Link
+        href="/articles/portfolio"
+        className="underline hover:text-blue-700 transition-all"
+      >
+        my projects
+      </Link>
+    );
+  };
+
   return (
     <div className="h-100 flex w-full flex-col gap-5 p-5 lg:w-1/4 lg:pr-0">
       <GridItem
@@ -13,8 +24,8 @@ const LeftSection = () => {
         icon={<img src={Orb.src} className="h-[24px] w-[24px]" />}
       >
         <span>
-          Welcome to my lab! Here you can find some of my projects, articles,
-          and other fun stuff.
+          Welcome to my lab! Here you can find some of {portfolioLink()},
+          articles, and other fun stuff.
         </span>
       </GridItem>
       <GridItem title="Articles" icon={<Bookmark />}>
