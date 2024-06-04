@@ -207,7 +207,7 @@ const Chat = () => {
         <input
           type="text"
           className="h-full w-full bg-transparent outline-none"
-          placeholder="Leave a message..."
+          placeholder="Say something cool..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={keyPressed}
