@@ -181,13 +181,14 @@ const Chat = () => {
   };
 
   const renderMesssages = () => {
+    const sortedMessaged = messages.sort((a, b) => a.timestamp - b.timestamp);
     return (
       <div
         className="flex flex-col gap-3 overflow-y-auto overflow-x-hidden pb-3"
         ref={containerRef}
       >
-        {messages.map((message: MESSAGE, index: number) =>
-          renderMessage(message, index),
+        {sortedMessaged.map((message: MESSAGE, index: number) =>
+          renderMessage(message, message.uid as any),
         )}
       </div>
     );
