@@ -91,9 +91,7 @@ const BallPit = () => {
     );
   }, [currentArticle]);
 
-  const addInitialBodies = (
-    count: number
-  ) => {
+  const addInitialBodies = (count: number) => {
     // get the canvas
     let x = 9;
     let y = 1;

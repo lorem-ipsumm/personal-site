@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`flex bg-[#121313] font-sans text-white ${sora.variable}`}
       >
-        <div className="m-auto flex md:flex-row flex-col md:min-h-screen w-full md:w-5/6 justify-center">
+        <div className="m-auto flex w-full flex-col justify-center md:min-h-screen md:w-5/6 md:flex-row">
           <LeftSection />
           {children}
         </div>

@@ -24,13 +24,8 @@ const FunBox = () => {
 
   const renderButtons = () => {
     return (
-      <Tabs
-        className="dark w-full -translate-y-[12px]"
-        defaultValue="Ball Pit"
-      >
-        <TabsList
-          className="dark w-full gap-2 border border-[#303030] bg-transparent"
-        >
+      <Tabs className="dark w-full -translate-y-[12px]" defaultValue="Ball Pit">
+        <TabsList className="dark w-full gap-2 border border-[#303030] bg-transparent">
           {activities.map((activity, index) => (
             <TabsTrigger
               key={index}

@@ -64,7 +64,7 @@ const Article = () => {
       {...props}
       onClick={() => setSelectedImage(props.src)}
       // style={{ cursor: "pointer" }}
-      className="cursor-pointer hover:opacity-80 transition-all"
+      className="cursor-pointer transition-all hover:opacity-80"
     />
   );
 

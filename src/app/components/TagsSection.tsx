@@ -9,7 +9,7 @@ const TagsSection = () => {
     return (
       <div className="flex flex-wrap gap-2">
         {currentArticle?.tags.map((tag) => (
-          <span 
+          <span
             className="rounded-md border-[1px] border-[#303030] px-2 py-1 text-xs"
             key={`${tag}-${currentArticle?.title}`}
           >

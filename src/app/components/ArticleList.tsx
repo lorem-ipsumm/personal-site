@@ -96,8 +96,7 @@ const ArticleList = () => {
   const chevronStyle = (type: "left" | "right") => {
     const numArticles = articles.length;
     const numPages = Math.ceil(numArticles / articlesPerPage);
-    if (type === "left")
-      return currentPage === 1 ? "text-gray-500" : "";
+    if (type === "left") return currentPage === 1 ? "text-gray-500" : "";
     else if (type === "right")
       return currentPage === numPages ? "text-gray-500" : "";
   };

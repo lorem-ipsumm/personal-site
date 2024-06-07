@@ -19,7 +19,8 @@ export const articles: ArticleData[] = [
   },
   {
     title: "Building a Desktop AI Assistant",
-    description: "A story on how I built a desktop AI assistant with Electron + React + Typescript",
+    description:
+      "A story on how I built a desktop AI assistant with Electron + React + Typescript",
     filePath: "/articles/desktop-ai-assistant.md",
     imgPath: "/article-images/desktop-ai-assistant.webp",
     tags: ["electron", "ai", "desktop"],
@@ -27,7 +28,8 @@ export const articles: ArticleData[] = [
   },
   {
     title: "Building Price Prophet",
-    description: "A story on how I built Price Prophet, a crypto price prediction tool",
+    description:
+      "A story on how I built Price Prophet, a crypto price prediction tool",
     filePath: "/articles/building-price-prophet.md",
     imgPath: "/article-images/building-price-prophet.png",
     tags: ["crypto", "price prediction"],
@@ -35,7 +37,8 @@ export const articles: ArticleData[] = [
   },
   {
     title: "Atomic NFT Arbitrages",
-    description: "A story on how I profited from performing atomic arbitrages on Sudoswap",
+    description:
+      "A story on how I profited from performing atomic arbitrages on Sudoswap",
     filePath: "/articles/nft-arbitrages.md",
     imgPath: "/article-images/nft-arbitrages.png",
     tags: ["ethereum", "flashloan", "mev", "solidity"],
@@ -43,7 +46,8 @@ export const articles: ArticleData[] = [
   },
   {
     title: "Creating Crypto Price Alerts",
-    description: "A tutorial on how to create crypto price alerts with Typescript",
+    description:
+      "A tutorial on how to create crypto price alerts with Typescript",
     filePath: "/articles/price-alerts-bot.md",
     imgPath: "/article-images/price-alerts-bot.png",
     tags: ["typescript", "crypto", "price alerts"],
@@ -56,5 +60,5 @@ export const articles: ArticleData[] = [
     imgPath: "/article-images/eth-web-dev-basics.png",
     tags: ["ethereum", "web dev", "solidity"],
     date: "2024-01-05",
-  }
-]
+  },
+];

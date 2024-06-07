@@ -10,7 +10,7 @@ const LeftSection = () => {
     return (
       <Link
         href="/articles/portfolio"
-        className="underline hover:text-blue-700 transition-all"
+        className="underline transition-all hover:text-blue-700"
       >
         my projects
       </Link>
