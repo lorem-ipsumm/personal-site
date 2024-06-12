@@ -10,7 +10,7 @@ export const articles: ArticleData[] = [
     date: "2023-12-31",
   },
   {
-    title: "Token Tavern",
+    title: "Token Tavern: Token Gated Chats",
     description: "Token Tavern: Token gated interactive voice chats",
     filePath: "/articles/token-tavern.md",
     imgPath: "/article-images/token-tavern.png",

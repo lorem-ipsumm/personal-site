@@ -20,7 +20,7 @@ const ArticleSection = () => {
       const scroll = sectionRef.current.scrollTop;
       let style =
         scroll && scroll > 600
-          ? "p-5 rounded-md shadow-lg border-[1px] border-[#303030] bg-[#1d1c1d99]"
+          ? "p-5 rounded-md shadow-lg border-[1px] border-[#303030] bg-[#1d1c1d]"
           : "bg-[#121313] border-[#121313] rounded-md";
       setHeaderStyle(style);
     };
@@ -73,7 +73,7 @@ const ArticleSection = () => {
 
     return (
       <div
-        className={`ease sticky top-0 z-10 py-3 backdrop-blur-lg transition-all duration-500 ${headerStyle}`}
+        className={`ease sticky top-0 z-10 py-3 transition-all duration-500 ${headerStyle}`}
       >
         <h1 className="mb-1 text-3xl font-bold">{title}</h1>
         <span className="text-xl text-blue-500">{date}</span>
