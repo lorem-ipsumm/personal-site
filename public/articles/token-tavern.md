@@ -35,6 +35,6 @@ I will be applying for the [Base OnChain Summer](https://base.mirror.xyz/HoH9cZV
 ### Links
 [Announcement of FT Launch](https://x.com/lorem___/status/1794449172302626824)
 
-[Site](https://token-tavern.vercel.app/)
+[Site](https://tokentavern.xyz)
 
 [Demo Video](https://drive.google.com/file/d/10F0tk86arEU1rITy0RTzhZq2FSMQWpoF/view?usp=drive_link)
