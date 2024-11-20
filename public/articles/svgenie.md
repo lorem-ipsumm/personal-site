@@ -1,5 +1,5 @@
 
-SVGenie is an app that allows web developers to convert SVGs into Typescript react code and import them into their projects with a single command. 
+[SVGenie](https://svgenie.xyz) is an app that allows web developers to convert SVGs into Typescript react code and import them into their projects with a single command. 
 
 This project was inspired by me running into the issue of working with a designer that works in figma and having to manually import SVGs into my projects. The process of importing the SVGs manually isn't too much effort, but it takes time I'd rather spend actually making the site. With SVGenie I've cut reduced that time to a few seconds.
 
@@ -23,7 +23,7 @@ The project itself isn't that complicated and in all honesty it took about a wee
 5. The command goes to the server and reads the DB to fetch the entry with the ID 1bef55ac
 6. The command creates a new file in the project with the SVG source
 
-As you can see, there isn't that much going on, however there are some separate services that need to work together. As stated in the tech stack, when I refer to the server here I'intom referring to the Netlify cloud functions. I only have two functions, one for storing components and one for fetching components.
+As you can see, there isn't that much going on, however there are some separate services that need to work together. As stated in the tech stack, when I refer to the server here I'm referring to the Netlify cloud functions. I only have two functions, one for storing components and one for fetching components.
 
 For the DB, a free instance of a Supabase DB is more than enough for this use case. The DB contains a few columns such as id, timestamp, and converted react code.
 
@@ -54,3 +54,4 @@ Overall this was a good experience that actually solves a problem that I run int
 
 As for the tech stack, I'm really liking Vite + Supabase, however I have a few projects on Supabase and while I don't mind getting rid of the experimental ones, if I make any more projects I'll likely have to pay. That being said I recently came across [Pocketbase](https://pocketbase.io/) and I'm really liking experimenting with it so far. As far as databases go, it's incredibly simple to use and get hosted.
 
+Feel free to check out the site at https://svgenie.xyz
