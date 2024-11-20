@@ -69,4 +69,12 @@ export const articles: ArticleData[] = [
     tags: ["ethereum", "web dev", "solidity"],
     date: "2024-01-05",
   },
+  {
+    title: "Creating SVGenie",
+    description: "",
+    filePath: "/articles/svgenie.md",
+    imgPath: "/article-images/svgenie.png",
+    tags: ["svg", "react", "typescript"],
+    date: "2024-11-20",
+  }
 ];

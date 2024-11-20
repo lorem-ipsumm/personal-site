@@ -1,5 +1,22 @@
 Here are the projects that I have worked on and am working on!
 
+# SVGenie
+
+SVGenie is a tool for web developers that allows them to convert SVGs to TSX and import them directly into their projects with a single command.
+
+![demo](https://s11.gifyu.com/images/SGsPN.gif)
+
+### Tech Stack
+- **Vite + Typescript**: Website framework
+- **TailwindCSS + Shadcn**: Styling
+- **Supabase**: Database 
+- **NPX**: Command line tool
+- **Netlify Functions**: Serverless functions
+
+[Link](https://svgenie.xyz/)
+
+--- 
+
 # Price Prophet
 
 ![demo](https://s9.gifyu.com/images/SVOeO.gif)
