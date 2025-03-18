@@ -76,5 +76,13 @@ export const articles: ArticleData[] = [
     imgPath: "/article-images/svgenie.png",
     tags: ["svg", "react", "typescript"],
     date: "2024-11-20",
+  },
+  {
+    title: "Creating Social Experiences",
+    description: "Creating web-based social experiences that evoke sensations of wonder and surprise",
+    filePath: "/articles/wandr-land.md",
+    imgPath: "/article-images/wandr-land.png",
+    tags: ["social", "react", "typescript"],
+    date: "2025-03-17",
   }
 ];

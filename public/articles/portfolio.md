@@ -1,5 +1,22 @@
 Here are the projects that I have worked on and am working on!
 
+# Wandr.land
+
+Wandr.land is a web based social experience / digital art piece I've put together that allows people to create a share drawings. This is an exploration into my idea of creating unexpected social experiences that can be accessed through scanning QR codes found in the real world.
+
+![demo](https://s6.gifyu.com/images/bzbBO.gif)
+
+### Tech Stack
+- **Vite + Typescript**: Website framework
+- **TailwindCSS + Shadcn**: Styling
+- **Supabase**: Database 
+- **NPX**: Command line tool
+- **Netlify Functions**: Serverless functions
+
+[Link](https://wandr.land/)
+
+---
+
 # SVGenie
 
 SVGenie is a tool for web developers that allows them to convert SVGs to TSX and import them directly into their projects with a single command.
