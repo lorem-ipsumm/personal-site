@@ -84,5 +84,13 @@ export const articles: ArticleData[] = [
     imgPath: "/article-images/wandr-land.png",
     tags: ["social", "react", "typescript"],
     date: "2025-03-17",
+  },
+  {
+    title: "Thread Vision - Reddit Thread Summarizer",
+    description: "Creating web-based social experiences that evoke sensations of wonder and surprise",
+    filePath: "/articles/thread-vision.md",
+    imgPath: "/article-images/thread-vision.png",
+    tags: ["social", "react", "typescript"],
+    date: "2025-04-08",
   }
 ];

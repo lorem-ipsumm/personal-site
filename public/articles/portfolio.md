@@ -1,5 +1,22 @@
 Here are the projects that I have worked on and am working on!
 
+# Thread Vision - Reddit Thread Summarizer
+
+Thread Vision is a chrome browser extension that summarizes Reddit threads for you, allowing you to quickly get an overview of the discussion within a Reddit thread 
+
+![demo](https://s6.gifyu.com/images/bM07Z.gif)
+
+### Tech Stack
+- **Vite + Typescript**:  Frontend/Backend framework
+- **Supabase**: Dataase + Auth
+- **TailwindCSS**: Styling
+- **Netlify**: Hosting
+- **Stripe**: Payments
+
+[Link](https://threadvision.xyz/)
+
+---
+
 # Wandr.land
 
 Wandr.land is a web based social experience / digital art piece I've put together that allows people to create a share drawings. This is an exploration into my idea of creating unexpected social experiences that can be accessed through scanning QR codes found in the real world.
