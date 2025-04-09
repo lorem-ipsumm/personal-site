@@ -90,7 +90,7 @@ export const articles: ArticleData[] = [
     description: "Creating web-based social experiences that evoke sensations of wonder and surprise",
     filePath: "/articles/thread-vision.md",
     imgPath: "/article-images/thread-vision.png",
-    tags: ["social", "react", "typescript"],
+    tags: ["ai", "chrome", "reddit", "saas"],
     date: "2025-04-08",
   }
 ];
