@@ -27,6 +27,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const [copiedCodeId, setCopiedCodeId] = useState<string | null>(null);
 
   useEffect(() => {
+    // Scroll to top when component mounts or slug changes
+    window.scrollTo(0, 0);
+
     // Find article by slug
     const foundArticle = articles.find((article) =>
       article.filePath.includes(params.slug),
