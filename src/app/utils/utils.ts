@@ -79,7 +79,8 @@ export const articles: ArticleData[] = [
   },
   {
     title: "Creating Social Experiences",
-    description: "Creating web-based social experiences that evoke sensations of wonder and surprise",
+    description:
+      "Creating web-based social experiences that evoke sensations of wonder and surprise",
     filePath: "/articles/wandr-land.md",
     imgPath: "/article-images/wandr-land.png",
     tags: ["social", "react", "typescript"],
@@ -87,10 +88,20 @@ export const articles: ArticleData[] = [
   },
   {
     title: "Thread Vision - Reddit Thread Summarizer",
-    description: "Creating web-based social experiences that evoke sensations of wonder and surprise",
+    description:
+      "Creating a Reddit thread summarizer using AI and Chrome extensions",
     filePath: "/articles/thread-vision.md",
     imgPath: "/article-images/thread-vision.png",
     tags: ["ai", "chrome", "reddit", "saas"],
     date: "2025-04-08",
-  }
+  },
+  {
+    title: "More Crypto Arbitrages",
+    description:
+      "A story about how I executed arbitrages on a platform called Plaza Finance",
+    filePath: "/articles/plaza-finance-arbs.md",
+    imgPath: "/article-images/plaza-finance-arbs.png",
+    tags: ["arbitrage", "mev", "solidity"],
+    date: "2025-06-25",
+  },
 ];

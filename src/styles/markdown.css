@@ -60,7 +60,7 @@
   background-color: #1d1c1d !important;
 }
 
-.markdown-content pre>code {
+.markdown-content pre > code {
   color: #c0c0c0;
   padding: 10px;
   display: block;
@@ -69,14 +69,14 @@
   font-family: monospace;
   font-size: 15px;
   overflow-x: auto;
-  box-shadow: 0 0 10px 5px rgba(0,0,0, 0.4);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
 }
 
 .markdown-content img {
   margin: auto;
   margin-top: 15px;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px 5px rgba(0,0,0, 0.4);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
 }
 
@@ -87,7 +87,7 @@
 .markdown-content ul,
 .markdown-content ol {
   color: #abb2bf;
-  padding-left: 3em;
+  padding-left: 1.5em;
   margin: 10px 0;
 }
 
