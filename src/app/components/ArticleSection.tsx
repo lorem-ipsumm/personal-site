@@ -20,7 +20,7 @@ const ArticleSection = () => {
       const scroll = sectionRef.current.scrollTop;
       let style =
         scroll && scroll > 600
-          ? "p-5 rounded-md shadow-lg border-[1px] border-[#303030] bg-[#1d1c1d]"
+          ? "p-5 rounded-md shadow-lg border border-[#303030] bg-[#1d1c1d]"
           : "bg-[#121313] border-[#121313] rounded-md";
       setHeaderStyle(style);
     };

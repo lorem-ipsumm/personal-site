@@ -203,7 +203,7 @@ const Chat = () => {
 
   const renderInput = () => {
     return (
-      <div className="border-1 relative flex min-h-10 w-full items-center rounded-lg bg-zinc-900 px-2">
+      <div className="border relative flex min-h-10 w-full items-center rounded-lg bg-zinc-900 px-2">
         <input
           type="text"
           className="h-full w-full bg-transparent outline-none"

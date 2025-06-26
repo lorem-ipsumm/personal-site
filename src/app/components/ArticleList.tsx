@@ -84,7 +84,7 @@ const ArticleList = () => {
           size={20}
         />
         <input
-          className="rounded-md border-[1px] border-[#303030] bg-[#1d1c1d99] p-2 pl-10"
+          className="rounded-md border border-[#303030] bg-[#1d1c1d99] p-2 pl-10"
           placeholder="Search articles or tags"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
@@ -111,7 +111,7 @@ const ArticleList = () => {
     const numPages = Math.ceil(numArticles / articlesPerPage);
 
     return (
-      <div className="mt-4 flex h-10 w-full items-center justify-center gap-8 rounded-md border-[1px] border-[#303030]">
+      <div className="mt-4 flex h-10 w-full items-center justify-center gap-8 rounded-md border border-[#303030]">
         <div className={buttonStyle}>
           <ChevronLeft
             size={20}
