@@ -1,8 +1,10 @@
 import "~/styles/globals.css";
-import { Sora } from "next/font/google";
-import LeftSection from "./components/LeftSection";
+import { Inter } from "next/font/google";
+import ThemeProvider from "~/components/theme-provider";
+import CustomCursor from "~/components/custom-cursor";
+import Header from "./components/Header";
 
-const sora = Sora({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -20,14 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`flex bg-[#121313] font-sans text-white ${sora.variable}`}
-      >
-        <div className="m-auto flex w-full flex-col justify-center md:min-h-screen md:w-5/6 md:flex-row">
-          <LeftSection />
-          {children}
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <ThemeProvider>
+          <div className="bg-background text-foreground min-h-screen">
+            <Header />
+            <CustomCursor />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

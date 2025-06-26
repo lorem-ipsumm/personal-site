@@ -1,20 +1,12 @@
-import { ArticleData } from "./interface";
+import type { ArticleData } from "./interface";
 
 export const articles: ArticleData[] = [
-  {
-    title: "Welcome to my Lab",
-    description: "A brief introduction to my lab",
-    filePath: "/articles/welcome.md",
-    imgPath: "/article-images/welcome.png",
-    tags: ["welcome"],
-    date: "2023-12-31",
-  },
   {
     title: "Token Tavern: Token Gated Chats",
     description: "Token Tavern: Token gated interactive voice chats",
     filePath: "/articles/token-tavern.md",
     imgPath: "/article-images/token-tavern.png",
-    tags: ["discord", "voice chat", "token"],
+    tags: ["crypto", "saas", "social"],
     date: "2024-06-12",
   },
   {
@@ -22,7 +14,7 @@ export const articles: ArticleData[] = [
     description: "",
     filePath: "/articles/portfolio.md",
     imgPath: "/article-images/portfolio.webp",
-    tags: ["programming", "portfolio", "projects"],
+    tags: ["social", "crypto", "saas"],
     date: "2023-12-30",
   },
   {
@@ -31,7 +23,7 @@ export const articles: ArticleData[] = [
       "A story on how I built a desktop AI assistant with Electron + React + Typescript",
     filePath: "/articles/desktop-ai-assistant.md",
     imgPath: "/article-images/desktop-ai-assistant.webp",
-    tags: ["electron", "ai", "desktop"],
+    tags: ["ai", "development"],
     date: "2024-04-24",
   },
   {
@@ -40,7 +32,7 @@ export const articles: ArticleData[] = [
       "A story on how I built Price Prophet, a crypto price prediction tool",
     filePath: "/articles/building-price-prophet.md",
     imgPath: "/article-images/building-price-prophet.png",
-    tags: ["crypto", "price prediction"],
+    tags: ["crypto", "saas"],
     date: "2024-03-27",
   },
   {
@@ -49,7 +41,7 @@ export const articles: ArticleData[] = [
       "A story on how I profited from performing atomic arbitrages on Sudoswap",
     filePath: "/articles/nft-arbitrages.md",
     imgPath: "/article-images/nft-arbitrages.png",
-    tags: ["ethereum", "flashloan", "mev", "solidity"],
+    tags: ["arbitrage", "crypto", "defi"],
     date: "2024-03-01",
   },
   {
@@ -58,7 +50,7 @@ export const articles: ArticleData[] = [
       "A tutorial on how to create crypto price alerts with Typescript",
     filePath: "/articles/price-alerts-bot.md",
     imgPath: "/article-images/price-alerts-bot.png",
-    tags: ["typescript", "crypto", "price alerts"],
+    tags: ["crypto", "saas", "defi"],
     date: "2024-03-15",
   },
   {
@@ -66,15 +58,16 @@ export const articles: ArticleData[] = [
     description: "A tutorial on how to create a simple web app with ETH",
     filePath: "/articles/eth-web-dev-basics.md",
     imgPath: "/article-images/eth-web-dev-basics.png",
-    tags: ["ethereum", "web dev", "solidity"],
+    tags: ["crypto", "defi"],
     date: "2024-01-05",
   },
   {
     title: "Creating SVGenie",
-    description: "",
+    description:
+      "Creating a tool to convert SVGs into React Typescript components",
     filePath: "/articles/svgenie.md",
     imgPath: "/article-images/svgenie.png",
-    tags: ["svg", "react", "typescript"],
+    tags: ["saas"],
     date: "2024-11-20",
   },
   {
@@ -83,7 +76,7 @@ export const articles: ArticleData[] = [
       "Creating web-based social experiences that evoke sensations of wonder and surprise",
     filePath: "/articles/wandr-land.md",
     imgPath: "/article-images/wandr-land.png",
-    tags: ["social", "react", "typescript"],
+    tags: ["social"],
     date: "2025-03-17",
   },
   {
@@ -92,16 +85,16 @@ export const articles: ArticleData[] = [
       "Creating a Reddit thread summarizer using AI and Chrome extensions",
     filePath: "/articles/thread-vision.md",
     imgPath: "/article-images/thread-vision.png",
-    tags: ["ai", "chrome", "reddit", "saas"],
+    tags: ["ai", "saas"],
     date: "2025-04-08",
   },
   {
-    title: "More Crypto Arbitrages",
+    title: "More Profitable Crypto Arbitrages",
     description:
-      "A story about how I executed arbitrages on a platform called Plaza Finance",
+      "A story about how I executed profitable DeFi arbitrages on through a platform called Defi Plaza Finance",
     filePath: "/articles/plaza-finance-arbs.md",
     imgPath: "/article-images/plaza-finance-arbs.png",
-    tags: ["arbitrage", "mev", "solidity"],
+    tags: ["arbitrage", "crypto", "defi"],
     date: "2025-06-25",
   },
 ];

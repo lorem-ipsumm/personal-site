@@ -1,0 +1,7 @@
+Please follow the rules below:
+
+Function signifiers for pages should be in the format of `export default function functionName()`
+Function signifiers for regular functions should be in the format of `const functionName = () => {}`
+Only perform actions that are specifically asked for
+Use shadcn components for UI elements when applicable. If the component is not installed, request to install it.
+Check if I have a global stylesheet. If it exists, use the color variables defined in the stylesheet.

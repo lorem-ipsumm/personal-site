@@ -1,26 +1,43 @@
 "use client";
-import { useEffect } from "react";
-import ArticleSection from "./components/ArticleSection";
-import { useAtom } from "jotai";
-import { currentArticleAtom } from "./utils/atoms";
+
+import BlogPostCard from "./components/BlogPostCard";
+import RecentPosts from "./components/RecentPosts";
 import { articles } from "./utils/utils";
-import { ArticleData } from "./utils/interface";
 
 export default function HomePage() {
-  const [, setCurrentArticle] = useAtom(currentArticleAtom);
+  // Sort articles by date (newest first)
+  const sortedArticles = [...articles].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
 
-  // set the current article to the first article in the list
-  // when the page loads
-  useEffect(() => {
-    const welcomeArticle = articles.find(
-      (article) => article.title === "Welcome to my Lab",
-    );
-    if (welcomeArticle) {
-      setCurrentArticle(welcomeArticle as ArticleData);
-    } else {
-      setCurrentArticle(articles[0] as ArticleData);
-    }
-  }, []);
+  return (
+    <div className="bg-background min-h-screen">
+      <main className="mx-auto max-w-4xl px-6 py-12">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
+          {/* Main content */}
+          <div className="lg:col-span-2">
+            {/* Articles list */}
+            <div className="space-y-0">
+              {sortedArticles.map((article, index) => (
+                <BlogPostCard
+                  key={article.title}
+                  post={article}
+                  index={String(index + 1)}
+                />
+              ))}
+            </div>
+          </div>
 
-  return <ArticleSection />;
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-8">
+              <RecentPosts posts={sortedArticles} />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* <BallPit /> */}
+    </div>
+  );
 }

@@ -9,6 +9,34 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "s6.gifyu.com",
+      },
+      {
+        protocol: "https",
+        hostname: "s11.gifyu.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
+      },
+      {
+        protocol: "https",
+        hostname: "s12.gifyu.com",
+      },
+      {
+        protocol: "https",
+        hostname: "s9.gifyu.com",
+      },
+    ],
+  },
 };
 
 export default config;
