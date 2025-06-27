@@ -371,7 +371,7 @@ a[href]:hover {
   text-decoration: none;
 }
 
-a[href]:hover::after {
+a[href]:not(.post-card):hover::after {
   content: "";
   position: absolute;
   bottom: -2px;

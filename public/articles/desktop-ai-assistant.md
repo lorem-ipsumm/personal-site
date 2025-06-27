@@ -1,7 +1,7 @@
-A few months ago I decided to build my own desktop assistant as a way to break away from relying on popular online LLMs like ChatGPT and Claude. In this article I'll be going over my motivations as well as a broad overview of the project as a whole. I won't spend any time going through the code, but it's all open source and on my [Github](https://github.com/lorem-ipsumm/electron-gpt), so if you want to make your own, feel free to fork my project. 
+A few months ago I decided to build my own desktop assistant as a way to break away from relying on popular online LLMs like ChatGPT and Claude. In this article I'll be going over my motivations as well as a broad overview of the project as a whole. I won't spend any time going through the code, but it's all open source and on my [Github](https://github.com/lorem-ipsumm/electron-gpt), so if you want to make your own, feel free to fork my project.
 
 In the last year and a half we've seen a lot of growth in the popularity for LLMs like ChatGPT, Claude, and more. It's become obvious that LLMs can be incredibly useful and powerful tools when it comes to certain tasks. I personally use ChatGPT often and in some ways it has replaced search engines like Google for me. While I am aware that LLMs tend to hallucinate, when it comes to thinking through ideas or projects, LLMs are very useful for breaking down steps and exploring thought processes.
-## My Motivations 
+## My Motivations
 
 My general motivations for this are that I believe that every single person should have private access to a semi-powerful LLM. LLMs aren't perfect, but I like to think of them as a version of Wikipedia that you can talk to. They have massive amounts of data collected from on and offline media and it's compiled in a way where we can communicate with it using natural language. Search engines are still better for some tasks, but there is a lot of ground that LLMs can and likely will take from them.
 
@@ -12,7 +12,7 @@ Fairly frequently I find myself hesitating to ask ChatGPT certain questions when
 
 ## My Application
 
-![demo](https://s12.gifyu.com/images/SVOJ0.gif)
+![demo](/images/assistant/1.gif)
 
 After learning how easy it was to work with Ollama I decided to make my own. To do this I went with Electron to build the actual desktop application itself. As a web developer, Electron allows me to use the tools I am already comfortable with such as React, CSS, Tailwind, etc.
 

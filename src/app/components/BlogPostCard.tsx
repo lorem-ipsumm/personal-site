@@ -35,7 +35,7 @@ export default function BlogPostCard({ post, index }: BlogPostCardProps) {
     >
       <Link
         href={`/articles/${post.filePath.split("/").pop()?.replace(".md", "")}`}
-        className="block"
+        className="post-card block"
       >
         <article className="border-border/40 hover:bg-muted/50 group cursor-pointer border-b px-3 py-6 transition-colors">
           <div className="flex items-start justify-between">

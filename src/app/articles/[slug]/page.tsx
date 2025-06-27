@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import RelatedArticles from "~/app/components/RelatedArticles";
 import { articles } from "~/app/utils/utils";
 import type { ArticleData } from "~/app/utils/interface";
@@ -14,9 +14,192 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useAtom } from "jotai";
 import { themeAtom } from "~/app/utils/atoms";
-import { ArrowLeft, Copy, Check } from "lucide-react";
+import { ArrowLeft, Copy, Check, X } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import Image from "next/image";
+import { ScaleLoader } from "react-spinners";
+
+const Loader = () => {
+  return (
+    <div>
+      <ScaleLoader color="var(--color-accent)" height={20} />
+    </div>
+  );
+};
+
+// Custom Image Component with loading and fullscreen functionality
+const ArticleImage = ({
+  src,
+  alt,
+  width,
+  height,
+  ...props
+}: React.ImgHTMLAttributes<HTMLImageElement>) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
+  const openFullscreen = () => {
+    setIsFullscreen(true);
+  };
+
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+  };
+
+  return (
+    <>
+      <div className="relative my-6 cursor-pointer" onClick={openFullscreen}>
+        {isLoading && (
+          <div className="bg-muted absolute inset-0 flex items-center justify-center rounded-lg">
+            <Loader />
+          </div>
+        )}
+        <Image
+          src={src ?? ""}
+          alt={alt ?? ""}
+          width={typeof width === "number" ? width : 800}
+          height={typeof height === "number" ? height : 450}
+          className={`border-border rounded-lg border transition-opacity duration-300 hover:opacity-90 ${
+            isLoading ? "opacity-0" : "opacity-100"
+          }`}
+          onLoad={handleImageLoad}
+          {...props}
+        />
+      </div>
+
+      {/* Fullscreen Modal */}
+      <AnimatePresence>
+        {isFullscreen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={closeFullscreen}
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
+              onClick={closeFullscreen}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-h-[90vh] max-w-[90vw]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={src ?? ""}
+                alt={alt ?? ""}
+                width={typeof width === "number" ? width : 1200}
+                height={typeof height === "number" ? height : 675}
+                className="rounded-lg object-contain"
+                style={{ maxHeight: "90vh", maxWidth: "90vw" }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+// Header Image Component with loading and fullscreen functionality
+const HeaderImage = ({
+  src,
+  alt,
+  width,
+  height,
+  ...props
+}: React.ImgHTMLAttributes<HTMLImageElement>) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
+  const openFullscreen = () => {
+    setIsFullscreen(true);
+  };
+
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+  };
+
+  return (
+    <>
+      <div className="relative cursor-pointer" onClick={openFullscreen}>
+        {isLoading && (
+          <div className="bg-muted absolute inset-0 flex items-center justify-center rounded-lg">
+            <Loader />
+          </div>
+        )}
+        <Image
+          src={src ?? ""}
+          alt={alt ?? ""}
+          width={typeof width === "number" ? width : 800}
+          height={typeof height === "number" ? height : 450}
+          className={`transition-opacity duration-300 hover:opacity-90 ${
+            isLoading ? "opacity-0" : "opacity-100"
+          }`}
+          onLoad={handleImageLoad}
+          {...props}
+        />
+      </div>
+
+      {/* Fullscreen Modal */}
+      <AnimatePresence>
+        {isFullscreen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={closeFullscreen}
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
+              onClick={closeFullscreen}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-h-[90vh] max-w-[90vw]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={src ?? ""}
+                alt={alt ?? ""}
+                width={typeof width === "number" ? width : 1200}
+                height={typeof height === "number" ? height : 675}
+                className="rounded-lg object-contain"
+                style={{ maxHeight: "90vh", maxWidth: "90vw" }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const router = useRouter();
@@ -216,12 +399,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       height,
       ...props
     }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      <Image
-        src={src ?? ""}
-        alt={alt ?? ""}
-        width={typeof width === "number" ? width : 800}
-        height={typeof height === "number" ? height : 450}
-        className="border-border my-6 rounded-lg border"
+      <ArticleImage
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
         {...props}
       />
     ),
@@ -308,7 +490,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
-              <Image
+              <HeaderImage
                 src={article.imgPath}
                 alt={article.title}
                 width={800}

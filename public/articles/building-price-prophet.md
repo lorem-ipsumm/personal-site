@@ -1,8 +1,8 @@
-Price prophet is a site that allows traders to practice their technical analysis skills on real data from historical market prices. Users are given a random range for a random asset and are able to make predictions based on which direction the price will move in the next few candles. 
+Price prophet is a site that allows traders to practice their technical analysis skills on real data from historical market prices. Users are given a random range for a random asset and are able to make predictions based on which direction the price will move in the next few candles.
 
-This is the first real product that I plan on getting to market and while I've taken several breaks on this, I want to document the rest of the process. As of now I'm very close to being able to release the first version, but there are still a few features and bugs that I would like to add before launching. 
+This is the first real product that I plan on getting to market and while I've taken several breaks on this, I want to document the rest of the process. As of now I'm very close to being able to release the first version, but there are still a few features and bugs that I would like to add before launching.
 
-![demo](https://s9.gifyu.com/images/SVOeO.gif)
+![demo](/images/price-prophet/1.gif)
 
 # Tech Stack
 - **NextJS + Typescript**:  Frontend/Backend framework

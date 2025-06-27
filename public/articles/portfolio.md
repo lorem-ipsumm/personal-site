@@ -2,7 +2,7 @@ Here are the projects that I have worked on and am working on!
 
 # Thread Vision - Reddit Thread Summarizer
 
-Thread Vision is a chrome browser extension that summarizes Reddit threads for you, allowing you to quickly get an overview of the discussion within a Reddit thread 
+Thread Vision is a chrome browser extension that summarizes Reddit threads for you, allowing you to quickly get an overview of the discussion within a Reddit thread
 
 ![demo](https://s6.gifyu.com/images/bM07Z.gif)
 
@@ -26,7 +26,7 @@ Wandr.land is a web based social experience / digital art piece I've put togethe
 ### Tech Stack
 - **Vite + Typescript**: Website framework
 - **TailwindCSS + Shadcn**: Styling
-- **Supabase**: Database 
+- **Supabase**: Database
 - **NPX**: Command line tool
 - **Netlify Functions**: Serverless functions
 
@@ -43,19 +43,19 @@ SVGenie is a tool for web developers that allows them to convert SVGs to TSX and
 ### Tech Stack
 - **Vite + Typescript**: Website framework
 - **TailwindCSS + Shadcn**: Styling
-- **Supabase**: Database 
+- **Supabase**: Database
 - **NPX**: Command line tool
 - **Netlify Functions**: Serverless functions
 
 [Link](https://svgenie.xyz/)
 
---- 
+---
 
 # Price Prophet
 
-![demo](https://s9.gifyu.com/images/SVOeO.gif)
+![demo](/images/price-prophet/1.gif)
 
-Price Prophet is an application I built to practice technical analysis skills for crypto asset trading in a risk free environment. This site allows users to paper trade various assets on random timeframes. 
+Price Prophet is an application I built to practice technical analysis skills for crypto asset trading in a risk free environment. This site allows users to paper trade various assets on random timeframes.
 
 ### Tech Stack
 - **NextJS + Typescript**: Website framework
@@ -67,7 +67,7 @@ Price Prophet is an application I built to practice technical analysis skills fo
 ---
 # Desktop AI Assistant
 
-![demo](https://s12.gifyu.com/images/SZGTk.gif)
+![demo](/images/assistant/1.gif)
 
 This is a project that I created that allows me to chat with powerful AI assistants from the comfort of my own desktop. By utilizing Ollama and PaperSpace servers I can run powerful models on powerful private servers or locally on my own machine. Through this I can get private access to models that can compete against the heavy hitters like ChatGPT and Claude AI.
 
