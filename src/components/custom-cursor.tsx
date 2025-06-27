@@ -168,39 +168,13 @@ const CustomCursor = () => {
   }, []);
 
   return (
-    <>
-      {/* Immediate cursor dot */}
-      {/* <div
-        ref={cursorRef}
-        className="pointer-events-none fixed z-[9999] opacity-0 transition-opacity duration-300"
-        style={{
-          width: "5px",
-          height: "5px",
-          backgroundColor: "var(--color-accent)",
-          borderRadius: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      /> */}
-
-      {/* Lagging cursor dot */}
-      <div
-        ref={cursorLagRef}
-        className="pointer-events-none fixed z-[9998] opacity-0 transition-opacity duration-300"
-        style={{
-          width: "10px",
-          height: "10px",
-          border: "1px solid var(--color-accent)",
-          borderRadius: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      />
-
+    <div className="opacity-20 max-md:hidden">
       {/* Trail circles */}
       {Array.from({ length: TRAIL_LENGTH }, (_, index) => (
         <div
           key={index}
           ref={(el) => (trailRefs.current[index] = el)}
-          className="pointer-events-none fixed opacity-0 transition-opacity duration-300"
+          className="pointer-events-none fixed transition-opacity duration-300"
           style={{
             width: `${8 - index * 0.5}px`,
             height: `${8 - index * 0.5}px`,
@@ -208,11 +182,10 @@ const CustomCursor = () => {
             borderRadius: "50%",
             transform: "translate(-50%, -50%)",
             zIndex: 9997 - index,
-            opacity: `${0.8 - index * 0.1}`,
           }}
         />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -410,7 +410,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   if (isLoading) {
     return (
-      <div className="bg-background min-h-screen">
+      <div className="min-h-screen">
         <main className="mx-auto max-w-4xl px-6 py-12">
           {/* Back button skeleton */}
           <div className="bg-muted mb-8 h-9 w-16 animate-pulse rounded"></div>
@@ -456,7 +456,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   if (!article) {
     return (
-      <div className="bg-background min-h-screen">
+      <div className="min-h-screen">
         <main className="mx-auto max-w-4xl px-6 py-12">
           <div className="text-center">
             <h1 className="mb-4 text-2xl font-bold">Article Not Found</h1>
@@ -478,13 +478,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="bg-background min-h-screen">
-      <main className="mx-auto max-w-4xl px-6 py-12">
+    <div className="min-h-screen">
+      <main className="mx-auto max-w-4xl px-6 py-8 md:py-12">
         <article className="max-w-3xl">
           {/* Article header */}
           <header className="border-border/40 mb-8 border-b pb-8">
             <motion.div
-              className="relative mb-4 flex h-[400px] w-full items-center justify-center overflow-hidden"
+              className="relative mb-4 flex h-[200px] w-full items-center justify-center overflow-hidden md:h-[400px]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}

@@ -42,7 +42,7 @@ export default function ArchivePage() {
   const labelStyle = "text-muted-foreground text-xs mb-1 block";
 
   return (
-    <div className="bg-background min-h-screen">
+    <div className="min-h-screen">
       <main className="mx-auto max-w-4xl px-6 py-12">
         <motion.div
           className="mb-5"

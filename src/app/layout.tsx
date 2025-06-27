@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import ThemeProvider from "~/components/theme-provider";
 import CustomCursor from "~/components/custom-cursor";
 import Header from "~/components/Header";
+import PhysicsBackground from "~/components/PhysicsBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,10 +26,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
-          <div className="bg-background text-foreground min-h-screen">
-            <Header />
-            <CustomCursor />
-            {children}
+          <div className="text-foreground bg-background relative min-h-screen">
+            <PhysicsBackground boxCount={10} ballCount={10} />
+            <div className="relative z-20 bg-transparent">
+              <Header />
+              <CustomCursor />
+              {children}
+            </div>
           </div>
         </ThemeProvider>
       </body>

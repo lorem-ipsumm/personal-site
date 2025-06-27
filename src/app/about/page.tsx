@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="min-h-screen">
       <main className="mx-auto max-w-4xl px-6 py-12">
         <div className="max-w-2xl">
           <motion.h1

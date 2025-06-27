@@ -11,7 +11,7 @@ export default function HomePage() {
   );
 
   return (
-    <div className="bg-background min-h-screen">
+    <div className="min-h-screen">
       <main className="mx-auto max-w-4xl px-6 py-12">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
           {/* Main content */}
