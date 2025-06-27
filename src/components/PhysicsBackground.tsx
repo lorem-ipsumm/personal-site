@@ -151,30 +151,6 @@ const PhysicsBackground = ({
     render.canvas.style.top = "0";
     render.canvas.style.left = "0";
 
-    // Add event listener to detect when mouse is over physics objects
-    let isDragging = false;
-
-    render.canvas.addEventListener("mousedown", (e) => {
-      const mousePosition = { x: e.clientX, y: e.clientY };
-      const bodies = Matter.Query.point(engine.world.bodies, mousePosition);
-      if (bodies.length > 0) {
-        isDragging = true;
-        e.stopPropagation();
-      } else {
-        // Allow click to pass through
-        render.canvas.style.pointerEvents = "none";
-        setTimeout(() => {
-          if (render.canvas) {
-            render.canvas.style.pointerEvents = "auto";
-          }
-        }, 0);
-      }
-    });
-
-    render.canvas.addEventListener("mouseup", () => {
-      isDragging = false;
-    });
-
     // Keep the mouse in sync with rendering
     render.mouse = mouse;
 
@@ -245,22 +221,30 @@ const PhysicsBackground = ({
       (body) => !body.render.visible,
     );
     if (boundaries.length >= 4) {
-      Matter.Body.setPosition(boundaries[0], {
-        x: window.innerWidth / 2,
-        y: -10,
-      });
-      Matter.Body.setPosition(boundaries[1], {
-        x: window.innerWidth / 2,
-        y: window.innerHeight + 10,
-      });
-      Matter.Body.setPosition(boundaries[2], {
-        x: -10,
-        y: window.innerHeight / 2,
-      });
-      Matter.Body.setPosition(boundaries[3], {
-        x: window.innerWidth + 10,
-        y: window.innerHeight / 2,
-      });
+      if (boundaries[0]) {
+        Matter.Body.setPosition(boundaries[0], {
+          x: window.innerWidth / 2,
+          y: -10,
+        });
+      }
+      if (boundaries[1]) {
+        Matter.Body.setPosition(boundaries[1], {
+          x: window.innerWidth / 2,
+          y: window.innerHeight + 10,
+        });
+      }
+      if (boundaries[2]) {
+        Matter.Body.setPosition(boundaries[2], {
+          x: -10,
+          y: window.innerHeight / 2,
+        });
+      }
+      if (boundaries[3]) {
+        Matter.Body.setPosition(boundaries[3], {
+          x: window.innerWidth + 10,
+          y: window.innerHeight / 2,
+        });
+      }
     }
   }, []);
 
