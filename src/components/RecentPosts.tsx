@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { ArticleData } from "../utils/interface";
+import type { ArticleData } from "~/lib/interfaces";
 
 interface RecentPostsProps {
   posts: ArticleData[];
@@ -57,7 +57,7 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
                     <span>{formatDate(post.date)}</span>
                   </div>
 
-                  <h4 className="group-hover:text-foreground/80 text-sm font-medium leading-tight transition-colors">
+                  <h4 className="group-hover:text-foreground/80 text-sm leading-tight font-medium transition-colors">
                     {post.title}
                   </h4>
 

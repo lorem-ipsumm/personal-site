@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "../components/Header";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { useState } from "react";
@@ -39,26 +38,26 @@ export default function ContactPage() {
 
   return (
     <div className="bg-background min-h-screen">
-      <Header />
-
       <main className="mx-auto max-w-4xl px-6 py-12">
         <div className="max-w-2xl">
           <h1 className="mb-8 text-3xl font-bold tracking-tight">CONTACT</h1>
 
           <div className="mb-8">
             <p className="text-muted-foreground leading-relaxed">
-              Have a project in mind, want to collaborate, or simply wish to connect?
-              I'd love to hear from you. Send me a message and I'll get back to you
-              as soon as possible.
+              Have a project in mind, want to collaborate, or simply wish to
+              connect? I'd love to hear from you. Send me a message and I'll get
+              back to you as soon as possible.
             </p>
           </div>
 
           {isSubmitted ? (
-            <div className="rounded-lg border border-border/40 bg-muted/20 p-6">
-              <h3 className="mb-2 font-semibold">Thank you for reaching out!</h3>
+            <div className="border-border/40 bg-muted/20 rounded-lg border p-6">
+              <h3 className="mb-2 font-semibold">
+                Thank you for reaching out!
+              </h3>
               <p className="text-muted-foreground text-sm">
-                Your message has been sent successfully. I'll get back to you within
-                24-48 hours.
+                Your message has been sent successfully. I'll get back to you
+                within 24-48 hours.
               </p>
             </div>
           ) : (
@@ -131,7 +130,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
-                  className="flex w-full rounded-md border border-border/40 bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="border-border/40 bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                   required
                 />
               </div>
@@ -145,20 +144,21 @@ export default function ContactPage() {
             </form>
           )}
 
-          <div className="mt-12 pt-8 border-t border-border/40">
+          <div className="border-border/40 mt-12 border-t pt-8">
             <h2 className="mb-4 text-lg font-semibold tracking-tight">
               OTHER WAYS TO CONNECT
             </h2>
-            <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="text-muted-foreground space-y-2 text-sm">
               <p>
                 <span className="font-medium">Email:</span> hello@yoursite.com
               </p>
               <p>
-                <span className="font-medium">Response Time:</span> Within 24-48 hours
+                <span className="font-medium">Response Time:</span> Within 24-48
+                hours
               </p>
               <p>
-                <span className="font-medium">Best For:</span> Project inquiries,
-                collaborations, speaking opportunities
+                <span className="font-medium">Best For:</span> Project
+                inquiries, collaborations, speaking opportunities
               </p>
             </div>
           </div>

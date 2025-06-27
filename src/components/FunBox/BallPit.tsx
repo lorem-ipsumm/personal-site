@@ -1,9 +1,6 @@
 "use client";
-import { useAtom } from "jotai";
 import { Engine, Render, World, Bodies, Vector, Body } from "matter-js";
 import { Fragment, useEffect, useRef } from "react";
-import { RefreshCcw } from "react-feather";
-import { currentArticleAtom } from "~/app/utils/atoms";
 
 const BallPit = () => {
   const scene = useRef(null);
@@ -14,7 +11,6 @@ const BallPit = () => {
   engine.current.world.gravity.y = 0.0;
 
   // import atom
-  const [currentArticle] = useAtom(currentArticleAtom);
 
   useEffect(() => {
     if (!scene.current) return;
@@ -74,22 +70,6 @@ const BallPit = () => {
       render.textures = {};
     };
   }, []);
-
-  useEffect(() => {
-    if (!currentArticle || !scene.current) return;
-    // apply a force to a random point on the canvas
-    const canvas = scene.current as HTMLDivElement;
-    const cw = canvas.clientWidth as number;
-    const ch = canvas.clientHeight as number;
-    applyForce(
-      {
-        x: Math.random() * cw,
-        y: Math.random() * ch,
-      },
-      0.1,
-      200,
-    );
-  }, [currentArticle]);
 
   const addInitialBodies = (count: number) => {
     // get the canvas

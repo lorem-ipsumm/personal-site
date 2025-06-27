@@ -1,8 +1,8 @@
 "use client";
 
-import BlogPostCard from "./components/BlogPostCard";
-import RecentPosts from "./components/RecentPosts";
-import { articles } from "./utils/utils";
+import BlogPostCard from "~/components/BlogPostCard";
+import RecentPosts from "~/components/RecentPosts";
+import { articles } from "~/lib/articles";
 
 export default function HomePage() {
   // Sort articles by date (newest first)
@@ -36,8 +36,6 @@ export default function HomePage() {
           </div>
         </div>
       </main>
-
-      {/* <BallPit /> */}
     </div>
   );
 }

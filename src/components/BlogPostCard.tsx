@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { ArticleData } from "../utils/interface";
+import type { ArticleData } from "~/lib/interfaces";
 
 interface BlogPostCardProps {
   post: ArticleData;

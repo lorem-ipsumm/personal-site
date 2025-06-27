@@ -3,17 +3,16 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import RelatedArticles from "~/app/components/RelatedArticles";
-import { articles } from "~/app/utils/utils";
-import type { ArticleData } from "~/app/utils/interface";
+import RelatedArticles from "~/components/RelatedArticles";
+import { articles } from "~/lib/articles";
+import type { ArticleData } from "~/lib/interfaces";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   oneLight,
   oneDark,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useAtom } from "jotai";
-import { themeAtom } from "~/app/utils/atoms";
+import { useThemeStore } from "~/hooks/state/useThemeStore";
 import { ArrowLeft, Copy, Check, X } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import Image from "next/image";
@@ -203,7 +202,7 @@ const HeaderImage = ({
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const router = useRouter();
-  const [theme] = useAtom(themeAtom);
+  const { theme } = useThemeStore();
   const [article, setArticle] = useState<ArticleData | null>(null);
   const [content, setContent] = useState<string>("");
   const [isLoading, setIsLoading] = useState(true);

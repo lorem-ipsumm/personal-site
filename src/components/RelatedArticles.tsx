@@ -1,9 +1,8 @@
 "use client";
 
-import type { ArticleData } from "~/app/utils/interface";
-import { Button } from "~/components/ui/button";
+import type { ArticleData } from "~/lib/interfaces";
 import { useRouter } from "next/navigation";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 interface RelatedArticlesProps {
   currentArticle: ArticleData;
@@ -105,7 +104,7 @@ const RelatedArticles = ({
               </div>
 
               {/* Title */}
-              <h3 className="group-hover:text-primary text-lg font-semibold leading-tight transition-colors">
+              <h3 className="group-hover:text-primary text-lg leading-tight font-semibold transition-colors">
                 {article.title}
               </h3>
 

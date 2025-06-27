@@ -1,4 +1,4 @@
-import type { ArticleData } from "./interface";
+import type { ArticleData } from "~/lib/interfaces";
 
 export const articles: ArticleData[] = [
   {

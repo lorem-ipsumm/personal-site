@@ -1,8 +1,7 @@
 "use client";
 
-import Header from "../components/Header";
-import BlogPostCard from "../components/BlogPostCard";
-import { articles } from "../utils/utils";
+import BlogPostCard from "~/components/BlogPostCard";
+import { articles } from "~/lib/articles";
 import { useState } from "react";
 import { motion } from "framer-motion";
 

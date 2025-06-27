@@ -1,16 +1,11 @@
 "use client";
 
-import { useAtom } from "jotai";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "~/components/ui/button";
-import { themeAtom } from "~/app/utils/atoms";
+import { useThemeStore } from "~/hooks/state/useThemeStore";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useAtom(themeAtom);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+  const { toggleTheme } = useThemeStore();
 
   return (
     <Button
@@ -19,8 +14,8 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className="h-8 w-8 p-0"
     >
-      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Sun className="h-4 w-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+      <Moon className="absolute h-4 w-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

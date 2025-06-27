@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Header from "./components/Header";
 import { Button } from "~/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
 
@@ -10,8 +9,6 @@ export default function NotFound() {
 
   return (
     <div className="bg-background min-h-screen">
-      <Header />
-
       <main className="mx-auto max-w-4xl px-6 py-12">
         <div className="flex min-h-[60vh] flex-col items-center justify-center text-center">
           <div className="mb-8">
