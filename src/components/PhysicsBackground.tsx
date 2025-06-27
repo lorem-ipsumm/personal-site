@@ -288,7 +288,7 @@ const PhysicsBackground = ({
     <div
       ref={sceneRef}
       className={`max-md:blur-4xl fixed inset-0 ${
-        theme === "dark" ? "blur-2xl" : "blur-xl"
+        theme === "dark" ? "blur-2xl" : "blur-[30px]"
       }`}
       style={{
         zIndex: 1,
