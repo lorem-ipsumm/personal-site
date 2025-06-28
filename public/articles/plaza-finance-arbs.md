@@ -1,4 +1,4 @@
-Roughly twice a year I am blessed by the on-chain gods with a profitable arbitrage opportunity. This past May I received my first blessing of the year that involves a protocol named [Plaza Finance](https://plaza.finance/) and was able to make just under 2 ETH within a week executing on these opportunities. It started with me coming across Plaza, looking throug the docs and immediately feeling in my balls that there may be something worth exploring here.
+Roughly twice a year I am blessed by the on-chain gods with a profitable arbitrage opportunity. This past May I received my first blessing of the year that involves a protocol named [Plaza Finance](https://plaza.finance/) and was able to make just under 2 ETH within a week executing on these opportunities. It started with me coming across Plaza, looking through the docs and immediately feeling in my balls that there may be something worth exploring here.
 
 ## Plaza Finance
 
