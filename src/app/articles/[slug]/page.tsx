@@ -35,6 +35,7 @@ const ArticleImage = ({
   ...props
 }: React.ImgHTMLAttributes<HTMLImageElement>) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isFullscreenLoading, setIsFullscreenLoading] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleImageLoad = () => {
@@ -42,6 +43,7 @@ const ArticleImage = ({
   };
 
   const openFullscreen = () => {
+    setIsFullscreenLoading(true);
     setIsFullscreen(true);
   };
 
@@ -49,9 +51,16 @@ const ArticleImage = ({
     setIsFullscreen(false);
   };
 
+  const handleFullscreenImageLoad = () => {
+    setIsFullscreenLoading(false);
+  };
+
   return (
     <>
-      <div className="relative my-6 cursor-pointer" onClick={openFullscreen}>
+      <div
+        className="relative my-6 w-full cursor-pointer"
+        onClick={openFullscreen}
+      >
         {isLoading && (
           <div className="bg-muted absolute inset-0 flex items-center justify-center rounded-lg">
             <Loader />
@@ -62,7 +71,7 @@ const ArticleImage = ({
           alt={alt ?? ""}
           width={typeof width === "number" ? width : 800}
           height={typeof height === "number" ? height : 450}
-          className={`border-border rounded-lg border transition-opacity duration-300 hover:opacity-90 ${
+          className={`border-border w-full rounded-lg border transition-opacity duration-300 hover:opacity-90 ${
             isLoading ? "opacity-0" : "opacity-100"
           }`}
           onLoad={handleImageLoad}
@@ -97,13 +106,21 @@ const ArticleImage = ({
               className="relative max-h-[90vh] max-w-[90vw]"
               onClick={(e) => e.stopPropagation()}
             >
+              {isFullscreenLoading && (
+                <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/50">
+                  <Loader />
+                </div>
+              )}
               <Image
                 src={src ?? ""}
                 alt={alt ?? ""}
                 width={typeof width === "number" ? width : 1200}
                 height={typeof height === "number" ? height : 675}
-                className="rounded-lg object-contain"
+                className={`rounded-lg object-contain transition-opacity duration-300 ${
+                  isFullscreenLoading ? "opacity-0" : "opacity-100"
+                }`}
                 style={{ maxHeight: "90vh", maxWidth: "90vw" }}
+                onLoad={handleFullscreenImageLoad}
               />
             </motion.div>
           </motion.div>
@@ -138,7 +155,10 @@ const HeaderImage = ({
 
   return (
     <>
-      <div className="relative cursor-pointer" onClick={openFullscreen}>
+      <div
+        className="relative w-full cursor-pointer overflow-hidden rounded-lg"
+        onClick={openFullscreen}
+      >
         {isLoading && (
           <div className="bg-muted absolute inset-0 flex items-center justify-center rounded-lg">
             <Loader />
@@ -149,7 +169,7 @@ const HeaderImage = ({
           alt={alt ?? ""}
           width={typeof width === "number" ? width : 800}
           height={typeof height === "number" ? height : 450}
-          className={`transition-opacity duration-300 hover:opacity-90 ${
+          className={`w-full transition-opacity duration-300 hover:opacity-90 ${
             isLoading ? "opacity-0" : "opacity-100"
           }`}
           onLoad={handleImageLoad}
@@ -415,7 +435,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           {/* Back button skeleton */}
           <div className="bg-muted mb-8 h-9 w-16 animate-pulse rounded"></div>
 
-          <article className="max-w-3xl">
+          <article className="w-full">
             {/* Header skeleton */}
             <header className="border-border/40 mb-8 border-b pb-8">
               <div className="mb-4 flex animate-pulse items-center space-x-4">
@@ -480,7 +500,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   return (
     <div className="min-h-screen">
       <main className="mx-auto max-w-4xl px-6 py-8 md:py-12">
-        <article className="max-w-3xl">
+        <article className="w-full">
           {/* Article header */}
           <header className="border-border/40 mb-8 border-b pb-8">
             <motion.div

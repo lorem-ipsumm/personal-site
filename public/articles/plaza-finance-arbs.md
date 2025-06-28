@@ -54,7 +54,7 @@ Once the contract was up and running it was surprisingly going fairly smooth and
 
 At this point I started to realize how profitable this could be. While each arb was only about $5 - $10, I was landing them roughly 20 - 25 times a day. At the peak the bot was making roughly $20/hr. Not ground breaking, but all of this took at most 12 hours to setup so I think it really paid off.
 
-## The 5/8 event
+## The 5/8 Event
 
 ![](/images/plaza-finance/5.png)
 
