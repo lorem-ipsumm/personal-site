@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <main className="mx-auto max-w-4xl px-6 py-12">
-        <div className="max-w-2xl">
+        <div className="max-full">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,12 +61,12 @@ export default function AboutPage() {
             <p className="text-muted-foreground leading-relaxed">
               If you want to checkout what I'm working on and what I've worked
               on in the past, click{" "}
-              <a
+              <Link
                 href="/articles/portfolio"
                 className="text-foreground underline hover:no-underline"
               >
                 here
-              </a>
+              </Link>
               .
             </p>
 
