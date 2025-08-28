@@ -97,4 +97,12 @@ export const articles: ArticleData[] = [
     tags: ["arbitrage", "crypto", "defi"],
     date: "2025-06-25",
   },
+  {
+    title: "Void Posting",
+    description: "An ode to endlessly posting into the void",
+    filePath: "/articles/void-posting.md",
+    imgPath: "/article-images/void-posting.png",
+    tags: ["social", "life"],
+    date: "2025-08-27",
+  },
 ];
