@@ -99,7 +99,7 @@ export const articles: ArticleData[] = [
   },
   {
     title: "Void Posting",
-    description: "Thoughts on posting to an unseen audience",
+    description: "An ode to posting to an unseen audience",
     filePath: "/articles/void-posting.md",
     imgPath: "/article-images/void-posting.png",
     tags: ["social", "life"],
