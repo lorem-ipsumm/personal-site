@@ -358,7 +358,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
     // Custom paragraph component
     p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p className="text-muted-foreground mb-4 leading-7" {...props}>
+      <p className="!text-foreground/90 mb-10 leading-8" {...props}>
         {children}
       </p>
     ),
@@ -382,12 +382,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
     // Custom list components
     ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-      <ul className="mb-4 ml-6 list-disc space-y-2" {...props}>
+      <ul className="mb-10 ml-6 list-disc space-y-2" {...props}>
         {children}
       </ul>
     ),
     ol: ({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-      <ol className="mb-4 ml-6 list-decimal space-y-2" {...props}>
+      <ol className="mb-10 ml-6 list-decimal space-y-2" {...props}>
         {children}
       </ol>
     ),
@@ -561,7 +561,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
           {/* Article content */}
           <motion.div
-            className="prose prose-lg max-w-none"
+            className="prose prose-lg max-w-none text-lg md:text-xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
