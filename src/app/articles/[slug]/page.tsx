@@ -364,7 +364,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
     // Custom paragraph component
     p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p className="!text-foreground/90 mb-10 leading-8" {...props}>
+      <p className="text-foreground mb-10 leading-8" {...props}>
         {children}
       </p>
     ),
@@ -398,7 +398,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       </ol>
     ),
     li: ({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
-      <li className="text-muted-foreground" {...props}>
+      <li className="text-foreground/80" {...props}>
         {children}
       </li>
     ),
@@ -409,7 +409,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       ...props
     }: React.HTMLAttributes<HTMLQuoteElement>) => (
       <blockquote
-        className="border-border text-muted-foreground mb-4 border-l-4 pl-4 italic"
+        className="border-border !text-muted-foreground mb-4 border-l-4 pl-4 text-[18px] italic"
         {...props}
       >
         {children}

@@ -255,7 +255,7 @@ textarea:focus {
 }
 
 .prose p {
-  color: hsl(var(--muted-foreground));
+  /*color: hsl(var(--muted-foreground));*/
   line-height: 1.7;
 }
 

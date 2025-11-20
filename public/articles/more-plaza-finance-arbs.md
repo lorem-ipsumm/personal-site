@@ -10,7 +10,7 @@ Shockingly I was able to make even more money from Plaza Finance with more arbit
  
 ![](/images/plaza-finance2/2.png)
 
-However just in case, I decided to buy about $100 worth of levETH at around $19 and was able to quickly accumulate 1.64 levETH. The way they did this was by deploying a custom redemption contract. They posted the address for the contract and when I checked it out I was shocked to see that there was no snapshot/merkle logic at all. Anyone with levETH could instantly redeem their levETH for ETH at a fixed price. As a result I was able to redeem that 1.64 levETH for ~0.88 ETH. Being that I spent at most $100 for that levETH I was left with ~$2k in profit.
+However just in case, I decided to buy about $100 worth of levETH at around $19 and was able to quickly accumulate 1.64 levETH. They posted the address for a redemption contract and when I checked it out I was shocked to see that there was no snapshot/merkle logic at all. Anyone with levETH could instantly redeem their levETH for ETH at a fixed price. As a result I was able to redeem that 1.64 levETH for ~0.88 ETH. Being that I spent at most $100 for that levETH I was left with ~$2k in profit.
 
 I wasn't the only one to realize this. As soon as more people understood, the price shot up from ~$100 (it pumped a bit from the initial dump to $19) straight to ~$2400.
 
@@ -18,7 +18,7 @@ I wasn't the only one to realize this. As soon as more people understood, the pr
 
 I was obviously quite happy with this profit, but I quickly realized that there was more profit to potentially be made by continuously arbitraging between the redemption pool and the open market pool on aerodrome. 
 
-Basically, it's safe to assume that not everyone holding levETH will be aware that there is a redemption pool where they can redeem their levETH for ETH without any slippage at a fixed price. These people will just sell their levETH on the open market. This is where I step in (or anyone else that is aware). Every time someone sells their levETH into the public aerodrome pool they are temporarily pushing the price down below the redemption pool price. I can take advantage of that by monitoring the aerodrome price of levETH and comparing it with the redemption pool price.
+> Basically, it's safe to assume (imo) that not everyone holding levETH will be aware that there is a redemption pool where they can redeem their levETH for ETH without any slippage at a fixed price. These people will just sell their levETH on the open market. This is where I step in (or anyone else that is aware). Every time someone sells their levETH into the public aerodrome pool they are temporarily pushing the price down below the redemption pool price. I can take advantage of that by monitoring the aerodrome price of levETH and comparing it with the redemption pool price.
 
 As usual, I started off with a detection script, which was very straightforward and took ~20 minutes to setup (just fetch a quote for ETH -> levETH, and then plug the levETH output amount into a formula that calculates how much ETH that can be redeemed for). Once I had this running I was able to manually execute a few arbs. I think the first few were just $5 - $10 at a time. Nothing crazy, but enough to warrant focusing more time on this.
 
@@ -31,7 +31,7 @@ The contract logic is pretty straightforward. Assuming an arb is detected:
 
 ![](/images/plaza-finance2/4.png)
 
-I've seen charts like this (pretty common for stables), but it's very cool to be the sole person that is maintaining a price range. It's also cool to see how different pricing mechanisms completely change the price movements of an asset. Prior to the wind down it looked more like your typical volatile asset, but now the price is pinned within a fixed range.
+> As a side note, I've seen charts like this (pretty common for stables), but it's very cool to be the sole person that is maintaining a price range. It's also cool to see how different pricing mechanisms completely change the price movements of an asset. Prior to the wind down it looked more like your typical volatile crypto asset, but with the introduction of a redemption pool there is now an incentive for traders (me) to keep the price pinned within a fixed range.
 
 Interestingly there wasn't really anyone else competing against me on this arb. Prior to me setting up my detection and execution bot there were some people manually arbing at the beginning, but once I had the contract setup, they stopped competing. At this point I had made ~0.569 ETH arbing the price to match the redemption pool. This combined with the additional purchase of levETH at $19 put me at ~1.449 ETH earned from this in total in a matter of 48 hours. Absolutely insane for me.
 
