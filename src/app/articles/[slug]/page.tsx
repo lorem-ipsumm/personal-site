@@ -356,6 +356,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       </h3>
     ),
 
+    hr: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <hr className="mb-6" {...props}>
+        {children}
+      </hr>
+    ),
+
     // Custom paragraph component
     p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
       <p className="!text-foreground/90 mb-10 leading-8" {...props}>

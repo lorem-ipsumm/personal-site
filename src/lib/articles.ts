@@ -105,4 +105,13 @@ export const articles: ArticleData[] = [
     tags: ["social", "life"],
     date: "2025-08-27",
   },
+  {
+    title: "Plaza Finance Arbitrages Round 2",
+    description:
+      "A story about how I executed MORE profitable DeFi arbitrages on Plaza Finance",
+    filePath: "/articles/more-plaza-finance-arbs.md",
+    imgPath: "/article-images/more-plaza-finance-arbs.png",
+    tags: ["arbitrage", "crypto", "defi"],
+    date: "2025-11-19",
+  },
 ];
