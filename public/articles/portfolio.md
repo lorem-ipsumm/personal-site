@@ -4,7 +4,7 @@ Here are the projects that I have worked on and am working on!
 
 Thread Vision is a chrome browser extension that summarizes Reddit threads for you, allowing you to quickly get an overview of the discussion within a Reddit thread
 
-![demo](https://s6.gifyu.com/images/bM07Z.gif)
+![demo](/images/portfolio/thread-vision.gif)
 
 ### Tech Stack
 - **Vite + Typescript**:  Frontend/Backend framework
@@ -21,7 +21,7 @@ Thread Vision is a chrome browser extension that summarizes Reddit threads for y
 
 Wandr.land is a web based social experience / digital art piece I've put together that allows people to create a share drawings. This is an exploration into my idea of creating unexpected social experiences that can be accessed through scanning QR codes found in the real world.
 
-![demo](https://s6.gifyu.com/images/bzbBO.gif)
+![demo](/images/portfolio/wandr.gif)
 
 ### Tech Stack
 - **Vite + Typescript**: Website framework
@@ -38,7 +38,7 @@ Wandr.land is a web based social experience / digital art piece I've put togethe
 
 SVGenie is a tool for web developers that allows them to convert SVGs to TSX and import them directly into their projects with a single command.
 
-![demo](https://s11.gifyu.com/images/SGsPN.gif)
+![demo](/images/portfolio/svgenie.gif)
 
 ### Tech Stack
 - **Vite + Typescript**: Website framework
@@ -81,11 +81,9 @@ This is a project that I created that allows me to chat with powerful AI assista
 ---
 # Cursor Chat
 
-![demo](https://s12.gifyu.com/images/SZGTo.gif)
+![demo](/images/portfolio/cursor-chat.gif)
 
-This project is an experiment where I was exploring websockets through the use of Socket.io in order to create an experience where users could chat between clients while being able to see the cursor movements between other users.
-
-This is still a work in progress as I intend to add proximity voice chat that would allow users to chat with their microphones, and the volume of each user relative to your position would be based on their distance from you in the 2d space.
+This project is an experiment where I was exploring websockets through the use of Socket.io in order to create an experience where users could chat between clients while being able to see the cursor movements between other users. This project also featured proximity voice chat that added a dynamic feel by allowing users to hang out in different parts of the 2D space and have separate conversations.
 
 ## Tech Stack
 - **NextJS + Typescript**: Website framework
@@ -98,7 +96,7 @@ This is still a work in progress as I intend to add proximity voice chat that wo
 ---
 # Defi Docs Summarizer
 
-![demo](https://s9.gifyu.com/images/SZGwn.gif)
+![demo](/images/portfolio/docs-summarizer.gif)
 
 This is a project that I made that allows users to chat with AI assistants that are knowledgeable in the complexities of various crypto protocols. Through the use of the chatGPT Assistants API I was able to deliver a chatGPT like experience just as the client requested. This streamlines the process of performing research on DeFi protocols.
 

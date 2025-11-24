@@ -25,7 +25,7 @@ export default function AboutPage() {
           >
             <p className="text-muted-foreground leading-relaxed">
               I am a full stack developer and designer with a specialization in
-              crypto and DeFi. I've been in crypto for 4 years and have worked
+              crypto and DeFi. I've been in crypto for 5 years and have worked
               with several protocols across a variety of networks. Outside of
               crypto I do freelance fullstack development. In my free time I
               build fun and interactive web-based experiences.
