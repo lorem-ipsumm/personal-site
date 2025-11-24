@@ -1,6 +1,6 @@
 Token Tavern is a token gated site that allows token holders to access voice chat rooms that exist on a 2D plane allowing for interactive chats between token holders. Each user can see the cursor of other users and can use their microphones to talk to each other in real time. Users can also send text chat messages that appear above their cursors. There is a proximity audio feature that sets the volume to each user around you relative to the distance between your cursor and theirs. This enables the ability for users to have multiple conversations in different parts of the 2D space. 
 
-![demo](https://s12.gifyu.com/images/SYZCc.gif)
+![demo](/images/token-tavern/cursor-chat.gif)
 
 Unfortunately I cannot demo the voice chat functionality for you, however trust me when I say there is a certain amount of "magic" that you feel when you're in a room talking with someone. It's even more interesting when you have proximity audio enabled, as it gives a sense of real presence in the room.
 
@@ -36,5 +36,3 @@ I will be applying for the [Base OnChain Summer](https://base.mirror.xyz/HoH9cZV
 [Announcement of FT Launch](https://x.com/lorem___/status/1794449172302626824)
 
 [Site](https://tokentavern.xyz)
-
-[Demo Video](https://drive.google.com/file/d/10F0tk86arEU1rITy0RTzhZq2FSMQWpoF/view?usp=drive_link)
