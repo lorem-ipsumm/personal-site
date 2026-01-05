@@ -71,7 +71,7 @@ const ArticleImage = ({
           alt={alt ?? ""}
           width={typeof width === "number" ? width : 800}
           height={typeof height === "number" ? height : 450}
-          className={`border-border w-full rounded-lg border transition-opacity duration-300 hover:opacity-90 ${
+          className={`max-h-[800px] w-full rounded-lg object-contain transition-opacity duration-300 hover:opacity-90 ${
             isLoading ? "opacity-0" : "opacity-100"
           }`}
           onLoad={handleImageLoad}
@@ -583,15 +583,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <footer className="border-border/40 mt-16 border-t pt-8">
           <div className="flex justify-between">
             <Button
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/articles")}
               variant="outline"
               className="inline-flex items-center gap-2"
             >
               <ArrowLeft className="h-4 w-4" />
-              All Posts
-            </Button>
-            <Button onClick={() => router.push("/archive")} variant="outline">
-              Archive
+              All Articles
             </Button>
           </div>
         </footer>

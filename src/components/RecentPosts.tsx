@@ -71,6 +71,18 @@ export default function RecentPosts({ posts }: RecentPostsProps) {
             </motion.div>
           ))}
         </div>
+
+        <div className="border-border mt-8 border-t pt-6">
+          <Link
+            href="/articles"
+            className="text-muted-foreground hover:text-foreground group inline-flex items-center text-sm transition-colors"
+          >
+            View all articles
+            <span className="ml-1 transition-transform group-hover:translate-x-0.5">
+              →
+            </span>
+          </Link>
+        </div>
       </div>
     </aside>
   );

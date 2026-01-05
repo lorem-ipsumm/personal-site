@@ -1,5 +1,3 @@
-Here are the projects that I have worked on and am working on!
-
 # Thread Vision - Reddit Thread Summarizer
 
 Thread Vision is a chrome browser extension that summarizes Reddit threads for you, allowing you to quickly get an overview of the discussion within a Reddit thread
@@ -8,7 +6,7 @@ Thread Vision is a chrome browser extension that summarizes Reddit threads for y
 
 ### Tech Stack
 - **Vite + Typescript**:  Frontend/Backend framework
-- **Supabase**: Dataase + Auth
+- **Supabase**: Database + Auth
 - **TailwindCSS**: Styling
 - **Netlify**: Hosting
 - **Stripe**: Payments

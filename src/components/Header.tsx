@@ -11,7 +11,7 @@ export default function Header() {
           <div className="flex items-center space-x-8">
             <Link href="/" className="flex flex-col">
               <h1 className="text-lg font-bold tracking-tight">Lorem Labs</h1>
-              <p className="text-muted-foreground text-light text-sm">
+              <p className="text-muted-foreground text-light hidden text-sm md:flex">
                 My Thoughts and Explorations
               </p>
             </Link>
@@ -19,16 +19,16 @@ export default function Header() {
 
           <nav className="flex items-center space-x-6">
             <Link
-              href="/archive"
+              href="/articles"
               className="hover:text-foreground text-xs font-light transition-colors"
             >
-              ARCHIVE
+              ARTICLES
             </Link>
             <Link
-              href="/about"
+              href="/articles/portfolio"
               className="hover:text-foreground text-xs font-light transition-colors"
             >
-              ABOUT
+              PORTFOLIO
             </Link>
             {/* <Link
               href="/contact"

@@ -13,7 +13,7 @@ export const articles: ArticleData[] = [
     title: "My Portfolio",
     description: "",
     filePath: "/articles/portfolio.md",
-    imgPath: "/article-images/portfolio.webp",
+    imgPath: "/article-images/portfolio.png",
     tags: ["social", "crypto", "saas"],
     date: "2023-12-30",
   },
